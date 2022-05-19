@@ -3,6 +3,7 @@ package standard.ch2Variable.example;
 public class VarEx2 {
 
     public static void main(String[] args) {
+
         int x = 10, y = 20;
         int tmp = 0;
 
