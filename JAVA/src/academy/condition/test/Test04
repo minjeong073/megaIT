@@ -11,8 +11,6 @@ public class Test04 {
 		System.out.print("1~7 사이의 날짜를 입력하세요 : ");
 		int date = scan.nextInt();
 		
-		// 1 수 2 목 3 금 4 토 5 일 
-		
 		switch(date) {
 		case 1:
 			System.out.println("수요일");
@@ -40,6 +38,5 @@ public class Test04 {
 		}
 		
 		scan.close();
-		
 	}
 }
