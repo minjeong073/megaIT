@@ -1,0 +1,54 @@
+package academy.condition.test;
+
+import java.util.Scanner;
+
+public class Test06 {
+
+	public static void main(String[] args) {
+
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("1. 과락 포함 합격 여부");
+		System.out.print("점수1 : ");
+		int score1 = scan.nextInt();
+		
+		System.out.print("점수2 : ");
+		int score2 = scan.nextInt();
+		
+		double average = (double) (score1 + score2) / 2;
+		
+		if (score1 > 50 && score2 > 50) {
+			if (average >= 60) {
+				System.out.println("합격");
+			} else {
+				System.out.println("불합격");
+			}
+		} else {
+			System.out.println("과락");
+		}
+		System.out.println();
+//		
+		
+		System.out.println("2. 윤년 구하기");
+		System.out.print("연도 : ");
+		int year = scan.nextInt();
+		
+		if ((year % 4 == 0 && year % 100 != 0)
+				|| (year % 400 == 0 && year % 100 != 0)) {
+			System.out.println("윤년");
+		} else {
+			System.out.println("윤년이 아니다");
+		}
+		
+		if (year % 100 != 0 && (year % 4 == 0 || year % 400 == 0)) {
+			System.out.println("윤년");
+		} else {
+			System.out.println("윤년이 아니다");
+		}
+		
+		
+		
+
+	}
+
+}
