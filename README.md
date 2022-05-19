@@ -1,1 +1,1 @@
-# megaIT
+# mega IT
