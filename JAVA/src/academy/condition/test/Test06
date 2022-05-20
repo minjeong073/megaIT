@@ -65,6 +65,25 @@ public class Test06 {
 		}
 		System.out.println();
 		
+		// 방법 4
+		if (year % 400 == 0) {
+			System.out.println("윤년");
+		} else if (year % 100 == 0) {
+			System.out.println("윤년이 아니다");
+		} else if (year % 4 == 0) {
+			System.out.println("윤년");
+		} else {
+			System.out.println("윤년이 아니다");
+		}
+		
+		// 방법 5
+		if (year % 400 == 0 
+			|| (year % 4 == 0 && year % 100 != 0)) {
+			System.out.println("윤년");
+		} else {
+			System.out.println("윤년이 아니다");
+		}
+		System.out.println();
 		
 		
 		System.out.println("3. 가위바위보 게임");
