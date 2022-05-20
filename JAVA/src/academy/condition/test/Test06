@@ -49,6 +49,23 @@ public class Test06 {
 		}
 		System.out.println();
 		
+		// 방법 3
+		if (year % 4 == 0) {
+			if (year % 100 == 0) {
+				if (year % 400 == 0) {
+					System.out.println("윤년");
+				} else {
+					System.out.println("윤년이 아니다");
+				}
+			} else {
+				System.out.println("윤년");
+			}
+		} else {
+			System.out.println("윤년이 아니다");
+		}
+		System.out.println();
+		
+		
 		
 		System.out.println("3. 가위바위보 게임");
 		System.out.print("영희 공격 : ");
