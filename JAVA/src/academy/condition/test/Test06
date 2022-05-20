@@ -33,20 +33,134 @@ public class Test06 {
 		System.out.print("연도 : ");
 		int year = scan.nextInt();
 		
-		if ((year % 4 == 0 && year % 100 != 0)
-				|| (year % 400 == 0 && year % 100 != 0)) {
-			System.out.println("윤년");
-		} else {
-			System.out.println("윤년이 아니다");
-		}
+//		// 방법 1
+//		if ((year % 4 == 0 && year % 100 != 0)
+//				|| (year % 400 == 0 && year % 100 != 0)) {
+//			System.out.println("윤년");
+//		} else {
+//			System.out.println("윤년이 아니다");
+//		}
 		
+		// 방법 2
 		if (year % 100 != 0 && (year % 4 == 0 || year % 400 == 0)) {
 			System.out.println("윤년");
 		} else {
 			System.out.println("윤년이 아니다");
 		}
+		System.out.println();
 		
 		
+		System.out.println("3. 가위바위보 게임");
+		System.out.print("영희 공격 : ");
+		int num1 = scan.nextInt();
+		
+		System.out.print("철수 공격 : ");
+		int num2 = scan.nextInt();
+		
+		switch (num1) {
+		case 1:
+			switch (num2) {
+			case 1:
+				System.out.println("비겼다");
+				break;
+			case 2:
+			case 3:
+				System.out.println("철수가 이겼다");
+				break;
+			default:
+				System.out.println("잘못된 입력");
+			}
+			break;
+		case 2:
+			switch (num2) {
+			case 1:
+				System.out.println("영희가 이겼다");
+				break;
+			case 2:
+				System.out.println("비겼다");
+				break;
+			case 3:
+				System.out.println("철수가 이겼다");
+				break;
+			default:
+				System.out.println("잘못된 입력");
+			}
+			break;
+		case 3:
+			switch (num2) {
+			case 1:
+			case 2:
+				System.out.println("영희가 이겼다");
+				break;
+			case 3:
+				System.out.println("비겼다");
+				break;
+			default:
+				System.out.println("잘못된 입력");
+			}
+			break;
+		default:
+			System.out.println("잘못된 입력");
+		}
+		System.out.println();
+		
+		
+		System.out.println("4. 45분 전");
+		System.out.print("시간 분 입력 : ");
+		int hour = scan.nextInt();
+		int min = scan.nextInt();
+		
+		// min < 45 : hour -1 , min + 15
+		// min > 45 : min - 45
+		// hour = 0 : hour = 23, min + 15
+		
+		if (min < 45) {
+			if (hour == 0) {
+				hour = 23;
+				min += 15;
+			} else {
+				hour --;
+				min += 15;
+			}
+		} else {
+			min -= 45;
+		}
+		System.out.println(hour + "시 " + min + "분");
+		System.out.println();
+		
+		
+		System.out.println("5. 윷놀이");
+		System.out.println("윷 상태를 입력하세요 : ");
+		num1 = scan.nextInt();
+		num2 = scan.nextInt();
+		int num3 = scan.nextInt();
+		int num4 = scan.nextInt();
+		
+		int sum = num1 + num2 + num3 + num4;
+		
+		// 0, 1 입력하지 않은 경우
+		if (num1 > 1 || num2 > 1 || num3 > 1 || num4 > 1
+			|| num1 < 0 || num2 < 0 || num3 < 0 || num4 < 0) {
+			System.out.println("잘못된 입력");
+		} else {
+			switch (sum) {
+			case 0:
+				System.out.println("모");
+				break;
+			case 1:
+				System.out.println("도");
+				break;
+			case 2:
+				System.out.println("개");
+				break;
+			case 3:
+				System.out.println("걸");
+				break;
+			case 4:
+				System.out.println("윷");
+				break;
+			}
+		}
 		
 
 	}
