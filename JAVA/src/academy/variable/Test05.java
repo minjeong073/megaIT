@@ -1,4 +1,4 @@
-package academy.variable.test;
+package academy.variable;
 
 import java.util.Scanner;
 

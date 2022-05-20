@@ -1,4 +1,4 @@
-package academy.loop.test;
+package academy.loop;
 
 import java.util.Scanner;
 
