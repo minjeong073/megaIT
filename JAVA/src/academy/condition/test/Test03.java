@@ -1,4 +1,4 @@
-package academy/condition/test;
+package academy.condition.test;
 
 import java.util.Scanner;
 
