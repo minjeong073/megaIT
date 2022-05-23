@@ -1,4 +1,4 @@
-package academy.condition.test;
+package academy.condition;
 
 import java.util.Scanner;
 
@@ -210,7 +210,7 @@ public class Test06 {
 		int stick3 = scan.nextInt();
 		int stick4 = scan.nextInt();
 		
-		int sum = num1 + num2 + num3 + num4;
+		int sum = stick1 + stick2 + stick3 + stick4;
 		
 		// 0, 1 입력하지 않은 경우
 		if (stick1 > 1 || stick2 > 1 || stick3 > 1 || stick4 > 1
