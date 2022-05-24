@@ -41,55 +41,34 @@ public class Test02 {
         // i = 1 2 3
         // num / 2 = 1 (2, 3)
 
-        for (int i = num; i > num/2; i--) { //3 2
+       for (int i = num; i > num/2; i--) { //7 6 5 4
             for (int j = num-i; j > 0; j--) { //0~0 / 1~0
                 System.out.print("-");
             }
-            for (int j = i/2; j > num-i; j--) {  //1~0 / 1~1
+            for (int j = i; j > num/2 +1 ; j--) {  //7~5 / 6~5 / 5~5 / 4~5
                 System.out.print("*+");
             }
             System.out.print("*");
-            for (int j = num-i; j > 0; j--) {
+            for (int j = num-i; j > 0; j--) {	//0~1 / 1~1 / 2~1 / 3~1
                 System.out.print("-");
             }
             System.out.println();
         }
-        for (int i = 1; i <= num/2; i++) { // 0
-            for (int j = num-i; j > 0; j--) {  //3~2
+        
+        for (int i = num/2; i > 0; i--) {
+        	for (int j = i; j > 1; j--) { 
                 System.out.print("-");
             }
-            for (int j = 1; j <= i; j++) {    //1~1 1~2
+            for (int j = i; j <= num/2; j++) {
                 System.out.print("*+");
             }
-        }
-
-//        for (int i = 0; i < num; i++) {
-//            for (int j = i; j < num-1; j++) {
-//                System.out.print("-");
-//            }
-//
-//        }
-        /*
-        5
-
-        *+*+*
-        -*+*-
-        --*--
-        -*+*-
-        *+*+*
-
-        7
-
-        *+*+*+*
-        -*+*+*-
-        --*+*--
-        ---*---
-        --*+*--
-        -*+*+*-
-        *+*+*+*
-
-         */
-
+            System.out.print("*");
+            for (int j = i; j > 1; j--) {
+                System.out.print("-");
+            }
+            System.out.println();
+		}
+        System.out.println();
 
     }
 }
