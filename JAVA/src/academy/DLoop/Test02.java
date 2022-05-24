@@ -36,16 +36,39 @@ public class Test02 {
         System.out.print("모래시계 크기를 입력하세요 : ");
         // 홀수 정수
 //        int num = scan.nextInt();
-        num = 3;
-        for (int i = 1; i <= num; i++) {
-            for (int j = 1; j < i; j++) {
+        num = 5;
+        System.out.println();
+        // i = 1 2 3
+        // num / 2 = 1 (2, 3)
+
+        for (int i = num; i > num/2; i--) { //3 2
+            for (int j = num-i; j > 0; j--) { //0~0 / 1~0
                 System.out.print("-");
             }
-            for (int j = 1; j <= i; j++) {
-                System.out.print("*");
+            for (int j = i/2; j > num-i; j--) {  //1~0 / 1~1
+                System.out.print("*+");
+            }
+            System.out.print("*");
+            for (int j = num-i; j > 0; j--) {
+                System.out.print("-");
             }
             System.out.println();
         }
+        for (int i = 1; i <= num/2; i++) { // 0
+            for (int j = num-i; j > 0; j--) {  //3~2
+                System.out.print("-");
+            }
+            for (int j = 1; j <= i; j++) {    //1~1 1~2
+                System.out.print("*+");
+            }
+        }
+
+//        for (int i = 0; i < num; i++) {
+//            for (int j = i; j < num-1; j++) {
+//                System.out.print("-");
+//            }
+//
+//        }
         /*
         5
 
