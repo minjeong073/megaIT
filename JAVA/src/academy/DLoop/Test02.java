@@ -6,6 +6,7 @@ public class Test02 {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
+
         System.out.println("1. 구구단");
         System.out.print("단수 범위를 입력하세요 : ");
         int start = scan.nextInt();
@@ -31,25 +32,23 @@ public class Test02 {
             }
             System.out.println();
         }
+        System.out.println();
+
 
         System.out.println("3. 모래시계 출력하기");
         System.out.print("모래시계 크기를 입력하세요 : ");
-        // 홀수 정수
-//        int num = scan.nextInt();
-        num = 5;
-        System.out.println();
-        // i = 1 2 3
-        // num / 2 = 1 (2, 3)
 
-       for (int i = num; i > num/2; i--) { //7 6 5 4
-            for (int j = num-i; j > 0; j--) { //0~0 / 1~0
+        num = scan.nextInt();
+
+       for (int i = num; i > num/2; i--) {
+            for (int j = num-i; j > 0; j--) {
                 System.out.print("-");
             }
-            for (int j = i; j > num/2 +1 ; j--) {  //7~5 / 6~5 / 5~5 / 4~5
+            for (int j = i; j > num/2 +1 ; j--) {
                 System.out.print("*+");
             }
             System.out.print("*");
-            for (int j = num-i; j > 0; j--) {	//0~1 / 1~1 / 2~1 / 3~1
+            for (int j = num-i; j > 0; j--) {
                 System.out.print("-");
             }
             System.out.println();
