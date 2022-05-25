@@ -69,6 +69,24 @@ public class Test02 {
             System.out.println();
 		}
         System.out.println();
+	
+	    
+	System.out.println("4. 숫자 삼각형 출력하기");
+        System.out.print("숫자 삼각형의 크기를 입력하세요 : ");
+        num = scan.nextInt();
+        
+        for (int i = 1; i <= num; i++) {
+        	int add = num-1;
+        	int updateNum = i;
+        	System.out.print(i + " ");
+        	
+		for (int j = 1; j < i; j++) {
+			updateNum += add;
+			System.out.print(updateNum + " ");
+			add--;
+		}
+		System.out.println();
+	}
 
     }
 }
