@@ -62,8 +62,13 @@ public class Test01 {
 		int min = 10;
 		int minIndex = 0;
 		for (int i = 0; i < numbers.length; i++) {
-			if (numbers[i] < min) {
-				min = numbers[i];
+// 			if (numbers[i] < min) {
+// 				min = numbers[i];
+// 				minIndex = i;
+// 			}
+			
+			// min 없이
+			if (numbers[minIndex] > numbers[i]) {
 				minIndex = i;
 			}
 		}
