@@ -45,7 +45,8 @@ public class Test05 {
         int n = scan.nextInt();
 
         for (int i = 0; i < n; i++) {
-            num = a + (d * i);
+//            num = a + (d * i);
+            num = a += d;
         }
         System.out.println(num);
         System.out.println();
@@ -62,6 +63,20 @@ public class Test05 {
                break;
             }
         }
+//        // for 문 줄이는 방법 ( / 2)
+//        for (int i = 2; i < num / 2; i++) {
+//        	if (num % i == 0) {
+//        		count++;
+//        		break;
+//        	}
+//        }
+//        // for 문 줄이는 방법 (제곱근)
+//        for (int i = 2; i <= Math.sqrt(num); i++) {
+//        	if (num % i == 0) {
+//        		count++;
+//        		break;
+//        	}
+//        }
 
         if (count > 0) {
             System.out.println("소수가 아닙니다.");
