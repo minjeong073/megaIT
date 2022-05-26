@@ -60,6 +60,13 @@ public class Test02 {
 			array[i] = j;
 			i++;
 		}
+		
+		// 다른 풀이
+		for (int j = 0; j < array.length; j++) {
+//			array[j] = (char)(65 + j);	// 같은 값
+			array[j] = (char)('A' + j);
+		}
+		
 		for (int j = 0; j < array.length; j++) {
 			if (array[j] == 'V') {
 				System.out.println("V 는 " + (j + 1) + "번째 입니다.");
