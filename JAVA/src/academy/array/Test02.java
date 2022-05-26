@@ -87,11 +87,16 @@ public class Test02 {
 				i++;
 			}
 			if (i >= 5) {
-				for (int j = 0; j < arr.length; j++) {
-					System.out.print(arr[j] + " ");
-				}
 				break;
 			}
+			// 다른 풀이
+			if (i == numbers.length) {
+				break;
+			}
+			// break 구문을 while 조건 안에 넣는게 더 간결
+		}
+		for (int j = 0; j < arr.length; j++) {
+			System.out.print(arr[j] + " ");
 		}
 
 	}
