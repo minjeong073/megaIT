@@ -66,10 +66,10 @@ public class Test02 {
                 System.out.print("-");
             }
             System.out.println();
-		}
+	}
         System.out.println();
 	
-	    
+	
 	System.out.println("4. 숫자 삼각형 출력하기");
         System.out.print("숫자 삼각형의 크기를 입력하세요 : ");
         num = scan.nextInt();
@@ -86,6 +86,28 @@ public class Test02 {
 		}
 		System.out.println();
 	}
+	    
+	// 다른 풀이
+        // 4 일 때
+        for (int i = 1; i <= 4; i++) {
+        	int number = i; 
+		for (int j = 0; j < i + 1; j++) {
+			System.out.print(number + " ");
+			number += 3 - j;
+		}
+		System.out.println();
+	}
+        
+        int line = scan.nextInt();
+        for (int i = 1; i <= line; i++) {
+        	int number = i;
+		for (int j = 0; j < i; j++) {
+			System.out.print(number + " ");
+			number += (line - 1) - j;
+		}
+		System.out.println();
+	}
+	    
 
     }
 }
