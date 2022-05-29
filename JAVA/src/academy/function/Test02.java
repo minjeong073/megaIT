@@ -19,10 +19,10 @@ public class Test02 {
 		mininum();
 		System.out.println();
 		
-		System.out.println("3. 소수(prime) 판별");
+		System.out.println("3. 소수(isPrime) 판별");
 		System.out.print("수를 입력하세요 : ");
 		num = scan.nextInt();
-		System.out.println(prime(num));
+		System.out.println(isPrime(num));
     
 	}
 
@@ -31,7 +31,10 @@ public class Test02 {
 		for (int i = 1; i <= num; i++) {
 			sum += i;
 			if (sum > 100) {
-				break;
+//				break;
+				// 어차피 끝나고 sum 을 return 해야하기 때문에
+				// 굳이 break 할 필요 없음
+				return sum;
 			}
 		}	
 		return sum;
@@ -50,7 +53,7 @@ public class Test02 {
 		System.out.println("최솟값은 " + min);
 	}
 	
-	public static boolean prime(int num) {
+	public static boolean isPrime(int num) {
 		for (int i = 2; i < num; i++) {
 			if (num % i == 0) {
 				return false;
