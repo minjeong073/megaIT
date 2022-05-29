@@ -4,6 +4,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Test03 {
+
+	public static void printArray(int[] array) {
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+		System.out.println();
+	}
+
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
@@ -19,32 +27,26 @@ public class Test03 {
 		numbers[index1] = numbers[index2];
 		numbers[index2] = tmp;
 		
-		for (int i = 0; i < numbers.length; i++) {
-			System.out.print(numbers[i] + " ");
-		}
-		System.out.println();
+		printArray(numbers);
 		System.out.println();
 		
 		
 		System.out.println("2. 셔플");
 		Random rand = new Random();
 		
-		int[] arr = new int[10];
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = (i + 1);
+		int[] randomArray = new int[10];
+		for (int i = 0; i < randomArray.length; i++) {
+			randomArray[i] = (i + 1);
 		}
 		
 		for (int i = 0; i < 10; i++) {
 			int randomNumber = rand.nextInt(10);
-			tmp = arr[i];
-			arr[i] = arr[randomNumber];
-			arr[randomNumber] = tmp; 
+			tmp = randomArray[i];
+			randomArray[i] = randomArray[randomNumber];
+			randomArray[randomNumber] = tmp;
 		}
 		
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + " ");
-		}
-		System.out.println();
+		printArray(randomArray);
 		System.out.println();
 		
 		
@@ -63,6 +65,7 @@ public class Test03 {
 			}
 		}
 		System.out.println();
+
 
 		System.out.println("4. 빈도수 구하기");
 		int[] numbers3 = {5, 3, 2, 1, 2, 4, 3, 3, 2, 1};
