@@ -41,41 +41,43 @@ public class Test01 {
 		
 		System.out.println("3. 평균 최고점 구하기");
 		double maxAverage = 0;
-		int index = 0;
+		int maxIndex = 0;
 		for (int i = 0; i < scores.length; i++) {
 			int sum = 0;
 			double average = 0;
 			for (int j = 0; j < scores[i].length; j++) {
 				sum += scores[i][j];
 			}
-			average = sum / 10.0;
+			//average = sum / 10.0;
+			average = sum / (double) scores[i].length;
+
 			if (average > maxAverage) {
 				maxAverage = average;
-				index = (i + 1);
+				maxIndex = (i + 1);
 			}
 		}
-		System.out.println("평균이 가장 높은 학생 : " + index + "번째 학생");
+		System.out.println("평균이 가장 높은 학생 : " + maxIndex + "번째 학생");
 		System.out.println("평균 : " + maxAverage);
 		System.out.println();
 		
 		
 		System.out.println("4. 특정 과목 최고점");
 		int maxScore = 0;
-		index = 0;
+		maxIndex = 0;
 		for (int i = 0; i < scores.length; i++) {
 			if (scores[i][4] > maxScore) {
 				maxScore = scores[i][4];
-				index = (i + 1);
+				maxIndex = (i + 1);
 			}
 		}
-		System.out.println("4번째 과목의 최고 성적자는 " + index + "번째 학생");
+		System.out.println("4번째 과목의 최고 성적자는 " + maxIndex + "번째 학생");
 		System.out.println("점수 : " + maxScore);
 		System.out.println();
 		
 		
 		System.out.println("5. 일부 평균 최고점");
 		maxAverage = 0;
-		index = 0;
+		maxIndex = 0;
 		for (int i = 0; i < scores.length; i++) {
 			int sum = 0;
 			double average = 0;
@@ -85,10 +87,10 @@ public class Test01 {
 			average = sum / 5.0;
 			if (average > maxAverage) {
 				maxAverage = average;
-				index = i;
+				maxIndex = i;
 			}
 		}
-		System.out.println("평균이 가장 높은 학생 : " + index + "번 index");
+		System.out.println("평균이 가장 높은 학생 : " + maxIndex + "번 index");
 		System.out.printf("평균 : %.1f", maxAverage);
 		
 	}
