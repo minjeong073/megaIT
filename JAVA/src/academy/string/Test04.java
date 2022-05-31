@@ -13,8 +13,15 @@ public class Test04 {
 				"tree.jpg", "eclipce.exe", "tmp.txt", "phone.jpg"};
 		
 		int count = 0;
+//		for (int i = 0; i < files.length; i++) {
+//			if (files[i].contains(".jpg")) {
+//				count++;
+//			}
+//		}
+		// contains 를 쓰면 파일 이름 중간에 포함된 경우도 조건에 포함될 수 있음
+		// -> 해당 문자열로 끝나는지를 확인하는 조건으로!
 		for (int i = 0; i < files.length; i++) {
-			if (files[i].contains(".jpg")) {
+			if (files[i].endsWith(".jpg")) {
 				count++;
 			}
 		}
