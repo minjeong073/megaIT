@@ -68,6 +68,15 @@ public class Test04 {
 			}
 		}
 		System.out.println("동명 이인 수 : " + count);
-		
+
+
+		// 문제 3 응용 -> 같은 이름이 3개일 경우
+		String membersString2 = "김혜수:송강호:정우성:이민호:송강호:이민정:이민정:이정재:이병헌:이정재:송강호";
+		String[] members2 = membersString2.split(":");
+
+		for (int i = 0; i < members2.length; i++) {
+
+		}
+
 	}
 }
