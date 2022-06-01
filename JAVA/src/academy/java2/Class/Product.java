@@ -29,14 +29,14 @@ public class Product {
 				System.out.println("판매 불가 상품");
 				break;
 			} else if (intExpirations[i] == intNows[i]){
-				count++;	// 년월일이 모두 같을 경우
+				count++;
 				continue;
 			} else {
 				System.out.println("판매 가능 상품");
 				break;
 			}
 		}
-		if (count == 3) {
+		if (count == 3) {	// 년월일이 모두 같을 경우
 			System.out.println("판매 가능 상품");
 		}
 
