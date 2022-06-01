@@ -4,7 +4,8 @@ public class OOP1 {
 
     /*
 
-    객체지향언어
+    객체지향언어(Object-Oriented Program)
+    <>
     "실제 세계는 사물(객체)로 이루어져 있으며, 발생하는 모든 사건들은 사물간의 상호작용이다"
 
     특징 : 코드의 재사용성이 높다
@@ -29,9 +30,7 @@ public class OOP1 {
     속성(property) : 멤버변수(member variable), 특성(attribute), 필드(field), 상태(state)
     기능(function) : 메서드(method), 함수(function), 행위(behavior)
 
-     */
 
-    /*
     < 2.6 클래스의 또 다른 정의>
 
     변수(데이터)와 함수를 하나의 클래스에 저장
@@ -59,6 +58,12 @@ public class OOP1 {
 
     메서드를 사용하는 이유
     : 높은 재사용성, 중복된 코드 제거, 프로그램의 구조화
+
+    매개변수 타입 별 메서드 리턴 값
+    primitive type(기본형) : int, boolean, char ... 8가지 기본형 / 기본형 값 복사됨
+        -> 읽기만 가능하고 메서드로 변경할 수 없음
+    reference type(참조형) : int[], String, class ... 기본형 이외의 타입들 / 인스턴스 주소 복사됨
+        -> 읽기, 변경 가능
 
      */
 
