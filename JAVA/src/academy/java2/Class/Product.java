@@ -1,4 +1,4 @@
-package test.test02;
+package academy.java2.Class;
 
 public class Product {
 	
