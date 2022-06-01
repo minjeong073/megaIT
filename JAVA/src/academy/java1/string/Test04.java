@@ -56,10 +56,10 @@ public class Test04 {
 		
 		System.out.println("3. 문자열 검색");
 		String membersString = "김혜수:송강호:정우성:이민호:송강호:이민정:이민정:이정재:이병헌:이정재";
-		
+
 		count = 0;
 		String[] members = membersString.split(":");
-		
+
 		for (int i = 0; i < members.length; i++) {
 			for (int j = (i + 1); j < members.length; j++) {
 				if (members[i].equals(members[j])) {
@@ -74,9 +74,19 @@ public class Test04 {
 		String membersString2 = "김혜수:송강호:정우성:이민호:송강호:이민정:이민정:이정재:이병헌:이정재:송강호";
 		String[] members2 = membersString2.split(":");
 
+		count = 0;
 		for (int i = 0; i < members2.length; i++) {
-
+			if (members2[i].equals("")) {
+				continue;
+			}
+			for (int j = (i + 1); j < members2.length; j++) {
+				if (members2[i].equals(members2[j])) {
+					count++;
+					members2[j] = "";
+					break;
+				}
+			}
 		}
-
+		System.out.println(count);
 	}
 }
