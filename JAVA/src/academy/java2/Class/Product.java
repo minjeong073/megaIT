@@ -10,8 +10,9 @@ public class Product {
 		return price * count;
 	}
 	// 2021-03-02, 2022-05-31
-	
-	void isAvailable(String now) {
+
+	// return 값으로 출력하게 -> 함수 실행 중단하고 return 하기 때문에 if 문 마다 break 할 필요 없음!
+	String isAvailable(String now) {
 		String[] expirations = expiration.split("-");
 		int[] intExpirations = new int[3];
 		for (int i = 0; i < expirations.length; i++) {
@@ -23,23 +24,22 @@ public class Product {
 		for (int i = 0; i < nows.length; i++) {
 			intNows[i] = Integer.parseInt(nows[i]);
 		}
+
 		int count = 0;
 		for (int i = 0; i < 3; i++) {
 			if (intExpirations[i] < intNows[i]) {
-				System.out.println("판매 불가 상품");
-				break;
+				return "판매 불가 상품";
 			} else if (intExpirations[i] == intNows[i]){
 				count++;
-				continue;
 			} else {
-				System.out.println("판매 가능 상품");
-				break;
+				return "판매 가능 상품";
 			}
 		}
 		if (count == 3) {	// 년월일이 모두 같을 경우
-			System.out.println("판매 가능 상품");
+			return "판매 가능 상품";
 		}
 
+		return "";
 	}
 	
 	void printInfo() {

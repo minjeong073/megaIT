@@ -24,7 +24,7 @@ public class Test01 {
 		
 		System.out.println("제품 5개의 가격 : " + product.calculatePrice(5)
 				+ "\n제품 13개의 가격 : " + product.calculatePrice(13));
-		product.isAvailable("2021-04-03");
+		System.out.println(product.isAvailable("2021-03-02"));
 		
 	}
 
