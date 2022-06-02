@@ -26,6 +26,12 @@ public class Test01 {
 				+ "\n제품 13개의 가격 : " + product.calculatePrice(13));
 		System.out.println(product.isAvailable("2021-03-02"));
 		
+//		if (product.availableSale("2022-06-02")) {
+//			System.out.println("판매 가능 상품");
+//		} else {
+//			System.out.println("판매 불가 상품");
+//		}
+		
 	}
 
 }
