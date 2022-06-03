@@ -1,0 +1,46 @@
+package academy.java2.construct.test04;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Test04 {
+    public static void main(String[] args) {
+
+        Lotto lotto = new Lotto();
+        LottoChecker checker = new LottoChecker();
+
+//        int[] manualInput = {3, 9, 14, 23, 43, 32};
+        Scanner scanner = new Scanner(System.in);
+
+        int[] manualInput = new int[6];
+        for (int i = 0; i < manualInput.length; i++) {
+            manualInput[i] = scanner.nextInt();
+            for (int j = 0; j < i; j++) {
+                if (manualInput[j] == manualInput[i]) {
+                    System.out.println("중복된 숫자입니다.");
+                    i--;
+                }
+            }
+        }
+
+        Random random = new Random();
+
+        // 당첨 번호 생성
+        checker.getWinningNumber(random);
+
+        // 수동 입력
+        lotto.manualInput(manualInput);
+
+        checker.printWinningNumber();
+
+        checker.checkWinning(lotto);
+        checker.printResult(lotto);
+
+        // 자동 입력
+        lotto.autoInput(random);
+
+        checker.checkWinning(lotto);
+        checker.printResult(lotto);
+
+    }
+}
