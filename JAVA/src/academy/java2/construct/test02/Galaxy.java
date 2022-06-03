@@ -6,19 +6,16 @@ public class Galaxy {
 	private String phoneNumber;
 	private String serialNumber;
 	
-	
-	public Galaxy(String company, String name) {
-		this.company = company;
-		this.name = name;
+	// 생성될 때 제조사와 제품 이름은 정해지기 때문에
+	// serialNumber 만 입력받도록
+	public Galaxy(String serialNumber) {
+		this.company = "삼성";
+		this.name = "Galaxy";
 		System.out.println(this.company + "에서 제조된 " + this.name + " 입니다.");
 	}
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
-	}
-	
-	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
 	}
 	
 	public String getPhoneNumber() {

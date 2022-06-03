@@ -15,10 +15,9 @@ public class Test02 {
 		System.out.println();
 		
 		
-		Galaxy galaxy = new Galaxy("삼성", "Gallaxy");
+		Galaxy galaxy = new Galaxy("12345678");
 		
 		galaxy.setPhoneNumber("010-1111-2222");
-		galaxy.setSerialNumber("123456789");
 		
 		System.out.println("전화 번호 : " + galaxy.getPhoneNumber());
 		System.out.println("일련 번호 : " + galaxy.getSerialNumber());
