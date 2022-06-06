@@ -7,8 +7,8 @@ public class LottoChecker {
     private String result;
 
 
-    public void getWinningNumber(Random random) {
-
+    public void getWinningNumber() {
+        Random random = new Random();
         // FIN : 당첨 번호 저장하기
         winningNumber = new int[6];
         for (int i = 0; i < winningNumber.length; i++) {

@@ -1,6 +1,5 @@
 package academy.java2.construct.test04;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Test04 {
@@ -8,6 +7,11 @@ public class Test04 {
 
         Lotto lotto = new Lotto();
         LottoChecker checker = new LottoChecker();
+
+        // 당첨 번호 생성
+        checker.getWinningNumber();
+        
+        
         // 수동 입력 1
 //        int[] manualInput = {3, 9, 14, 23, 43, 32};
 
@@ -26,23 +30,20 @@ public class Test04 {
             }
         }
 
-        Random random = new Random();
-
-        // 당첨 번호 생성
-        checker.getWinningNumber(random);
-
         // 수동 입력
         lotto.manualInput(manualInput);
 
         // 당첨 번호 출력
         checker.printWinningNumber();
-
+        
+        // 수동 입력 결과 출력
         checker.checkWinning(lotto);
         checker.printResult(lotto);
 
         // 자동 입력
-        lotto.autoInput(random);
-
+        lotto.autoInput();
+        
+        // 자동 입력 결과 출력
         checker.checkWinning(lotto);
         checker.printResult(lotto);
 

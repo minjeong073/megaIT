@@ -5,17 +5,15 @@ import java.util.Random;
 public class Lotto {
     private int[] input;
 
-
     public void manualInput(int[] input) {
 
         // 배열 가져와서 확인 -> 중복될 경우 ?
         // main 에서 확인
-
         this.input = input;
-
     }
 
-    public int[] autoInput(Random random) {
+    public void autoInput() {
+        Random random = new Random();
         input = new int[6];
         // FIN : random 값 저장하기 + return 하기
         for (int i = 0; i < this.input.length; i++) {
@@ -26,7 +24,6 @@ public class Lotto {
                 }
             }
         }
-        return this.input;
     }
 
     public int[] getInput() {
