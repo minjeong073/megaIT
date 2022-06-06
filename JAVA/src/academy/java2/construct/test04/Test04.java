@@ -8,8 +8,11 @@ public class Test04 {
 
         Lotto lotto = new Lotto();
         LottoChecker checker = new LottoChecker();
-
+        // 수동 입력 1
 //        int[] manualInput = {3, 9, 14, 23, 43, 32};
+
+        // 수동 입력 2
+        // 중복된 숫자 확인하기
         Scanner scanner = new Scanner(System.in);
 
         int[] manualInput = new int[6];
@@ -31,6 +34,7 @@ public class Test04 {
         // 수동 입력
         lotto.manualInput(manualInput);
 
+        // 당첨 번호 출력
         checker.printWinningNumber();
 
         checker.checkWinning(lotto);
