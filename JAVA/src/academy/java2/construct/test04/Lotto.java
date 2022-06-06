@@ -9,18 +9,7 @@ public class Lotto {
     public void manualInput(int[] input) {
 
         // 배열 가져와서 확인 -> 중복될 경우 ?
-        // main 에서 확인 ->
-//        for (int i = 0; i < input.length; i++) {
-//            for (int j = 0; j < i; j++) {
-//
-//            }
-//        }
-//        for (int i = 1; i <= input.length; i++) {
-//            if (input[i] == input[i-1]) {
-//                System.out.println("중복된 숫자입니다.");
-//
-//            }
-//        }
+        // main 에서 확인
 
         this.input = input;
 
