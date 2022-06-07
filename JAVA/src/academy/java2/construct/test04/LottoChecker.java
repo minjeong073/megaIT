@@ -1,5 +1,6 @@
 package academy.java2.construct.test04;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class LottoChecker {
@@ -62,6 +63,7 @@ public class LottoChecker {
 
         // FIN : 당첨 결과 출력하기
         int[] lottoInput = lotto.getInput();
+        Arrays.sort(lottoInput);    // ++ 오름차순 정렬해서 출력하도록
         for (int i = 0; i < lottoInput.length; i++) {
             System.out.print(lottoInput[i] + " ");
         }
@@ -71,6 +73,7 @@ public class LottoChecker {
 
     public void printWinningNumber() {
         System.out.print("당첨 번호 : ");
+        Arrays.sort(winningNumber); // ++ 오름차순 정렬해서 출력하도록
         for (int i = 0; i < winningNumber.length; i++) {
             System.out.print(winningNumber[i] + " ");
         }
