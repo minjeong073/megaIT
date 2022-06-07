@@ -1,7 +1,5 @@
 package academy.java2.construct.test03;
 
-import java.util.Scanner;
-
 public class OmrCard {
     private String studentName;
     private String studentNumber;
@@ -11,15 +9,15 @@ public class OmrCard {
     public OmrCard(String studentName, String studentNumber) {
         this.studentName = studentName;
         this.studentNumber = studentNumber;
+        this.input = new int[5];
     }
-
-    public void exam(int[] input) {
-        this.input = input;
-    }
-
 
     public void setInput(int[] input) {
         this.input = input;
+    }
+
+    public void setInput(int number, int input) {
+        this.input[number - 1] = input;
     }
 
     public String getStudentName() {
