@@ -7,15 +7,18 @@ public class LottoChecker {
     private int[] winningNumber;
     private String result;
 
+    public LottoChecker() {
+        this.winningNumber = new int[6];
+    }
 
-    public void getWinningNumber() {
+    public void drawLots() {
         Random random = new Random();
         // FIN : 당첨 번호 저장하기
-        winningNumber = new int[6];
-        for (int i = 0; i < winningNumber.length; i++) {
-            winningNumber[i] = random.nextInt(45) + 1;
+
+        for (int i = 0; i < this.winningNumber.length; i++) {
+            this.winningNumber[i] = random.nextInt(45) + 1;
             for (int j = 0; j < i; j++) {
-                if (winningNumber[j] == winningNumber[i]) {
+                if (this.winningNumber[j] == this.winningNumber[i]) {
                     i--;
                 }
             }
@@ -57,6 +60,34 @@ public class LottoChecker {
                 result = "꽝";
         }
 
+    }
+
+    // 당첨 여부 확인 -> return String
+    public String checkLotto(Lotto lotto) {
+        int[] input = lotto.getInput();
+        int count = 0;
+
+        for (int i = 0; i < input.length; i++) {
+            for (int j = 0; j < winningNumber.length; j++) {
+                if (input[i] == winningNumber[j]) {
+                    count++;
+                    break;
+                }
+            }
+        }
+
+        if (count == 6) {
+            return "1등";
+        } else if (count == 5) {
+            return "2등";
+        } else if (count == 4) {
+            return "3등";
+        } else if (count == 3) {
+            return "4등";
+        } else if (count == 2) {
+            return "5등";
+        }
+        return "꽝";
     }
 
     public void printResult(Lotto lotto) {
