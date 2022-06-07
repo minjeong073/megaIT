@@ -5,6 +5,11 @@ import java.util.Random;
 public class Lotto {
     private int[] input;
 
+    //private Random rand = SecureRandom.getInstanceStrong();  // SecureRandom is preferred to Random
+    //
+    //public void doSomethingCommon() {
+    //  int rValue = this.rand.nextInt();
+
     public void manualInput(int[] input) {
 
         // 배열 가져와서 확인 -> 중복될 경우 ?
