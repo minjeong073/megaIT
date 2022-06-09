@@ -12,33 +12,39 @@ public class Test02 {
 		
 		for (int i = 0; i < shape.length; i++) {
 //			System.out.println(printArea(shape[i]));
-			printAreas(shape[i]);
+// 			printAreas(shape[i]);
+			printShapeArea(shape[i]);
 		}
 		
 	}
 	
-	public static String printArea(Shape shape) {
-		String str = null;
-		if (shape instanceof Triangle) {
-			str = "삼각형";
-		} else if (shape instanceof Rectangle) {
-			str = "사각형";
-		} else if (shape instanceof Circle) {
-			str = "원";
-		}
-		return str + "의 넓이는 " + shape.area() + "cm^2 입니다.";
+	public static void printShapeArea(Shape shape) {
+		System.out.println(shape.getName() + "의 넓이는 " 
+				+ shape.getArea() + "cm^2 입니다.");
 	}
 	
-	public static void printAreas(Shape shape) {
-		if (shape instanceof Triangle) {
-			Triangle triangle = (Triangle) shape;
-			triangle.printArea();
-		} else if (shape instanceof Rectangle) {
-			Rectangle rectangle = (Rectangle) shape;
-			rectangle.printArea();
-		} else if (shape instanceof Circle) {
-			Circle circle = (Circle) shape;
-			circle.printArea();
-		}
-	}
+// 	public static String printArea(Shape shape) {
+// 		String str = null;
+// 		if (shape instanceof Triangle) {
+// 			str = "삼각형";
+// 		} else if (shape instanceof Rectangle) {
+// 			str = "사각형";
+// 		} else if (shape instanceof Circle) {
+// 			str = "원";
+// 		}
+// 		return str + "의 넓이는 " + shape.area() + "cm^2 입니다.";
+// 	}
+	
+// 	public static void printAreas(Shape shape) {
+// 		if (shape instanceof Triangle) {
+// 			Triangle triangle = (Triangle) shape;
+// 			triangle.printArea();
+// 		} else if (shape instanceof Rectangle) {
+// 			Rectangle rectangle = (Rectangle) shape;
+// 			rectangle.printArea();
+// 		} else if (shape instanceof Circle) {
+// 			Circle circle = (Circle) shape;
+// 			circle.printArea();
+// 		}
+// 	}
 }
