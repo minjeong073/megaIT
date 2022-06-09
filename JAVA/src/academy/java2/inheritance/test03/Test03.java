@@ -6,8 +6,8 @@ public class Test03 {
 		
 		CalculateHealthInfo calc = new CalculateHealthInfo("유재석", 178.3, 80);
 		
-		calc.calculateStandardWeight();
-		calc.calculateBmi();
+// 		calc.calculateStandardWeight();
+// 		calc.calculateBmi();
 		
 		calc.showInfo();
 		
