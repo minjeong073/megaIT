@@ -2,14 +2,21 @@ package academy.java2.polymorphism.test02;
 
 public class Shape {
 	
-	private double area;
+	private String name;
 	
-	public double area() {	
-		return area;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
-	public void printArea() {
-		
+	public String getName() {
+		return name;
 	}
+	
+	public double getArea() {	
+		return 0;
+	}
+	
+// 	public void printArea() {	
+// 	}
 
 }
