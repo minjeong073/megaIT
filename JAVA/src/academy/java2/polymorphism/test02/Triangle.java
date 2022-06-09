@@ -8,16 +8,17 @@ public class Triangle extends Shape {
 	public Triangle(int width, int height) {
 		this.width = width;
 		this.height = height;
+		super.setName("삼각형");
 	}
 
 	@Override
-	public double area() {
+	public double getArea() {
 		return this.width * this.height / 2;
 	}
 
-	@Override
-	public void printArea() {
-		System.out.println("삼각형의 넓이는 " + area() + "cm^2 입니다.");
-	}
+// 	@Override
+// 	public void printArea() {
+// 		System.out.println("삼각형의 넓이는 " + area() + "cm^2 입니다.");
+// 	}
 	
 }
