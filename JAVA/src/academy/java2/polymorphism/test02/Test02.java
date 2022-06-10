@@ -13,7 +13,8 @@ public class Test02 {
 		for (int i = 0; i < shape.length; i++) {
 //			System.out.println(printArea(shape[i]));
 // 			printAreas(shape[i]);
-			printShapeArea(shape[i]);
+// 			printShapeArea(shape[i]);
+			shape[i].printArea();
 		}
 		
 	}
