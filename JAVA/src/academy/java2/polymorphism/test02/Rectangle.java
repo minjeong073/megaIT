@@ -7,18 +7,19 @@ public class Rectangle extends Shape {
 	
 	
 	public Rectangle(int width, int height) {
+		super("사각형");
 		this.width = width;
 		this.height = height;
 	}
 
 	@Override
-	public double area() {
+	public double getArea() {
 		return width * height;
 	}
 
-	@Override
-	public void printArea() {
-		System.out.println("사각형의 넓이는 " + area() + "cm^2 입니다.");
-	}
+// 	@Override
+// 	public void printArea() {
+// 		System.out.println("사각형의 넓이는 " + area() + "cm^2 입니다.");
+// 	}
 	
 }
