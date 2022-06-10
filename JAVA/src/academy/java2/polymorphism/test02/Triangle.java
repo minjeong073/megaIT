@@ -6,9 +6,10 @@ public class Triangle extends Shape {
 	private int height;
 	
 	public Triangle(int width, int height) {
+		super("삼각형");
 		this.width = width;
 		this.height = height;
-		super.setName("삼각형");
+// 		super.setName("삼각형");
 	}
 
 	@Override
