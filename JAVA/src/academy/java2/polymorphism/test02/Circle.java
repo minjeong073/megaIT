@@ -6,17 +6,18 @@ public class Circle extends Shape {
 	private double pi = 3.14;
 		
 	public Circle(int radius) {
+		super("원");
 		this.radius = radius;
 	}
 
 	@Override
-	public double area() {	
+	public double getArea() {	
 		return radius * radius * pi;
 	}
 	
-	@Override
-	public void printArea() {
-		System.out.println("원의 넓이는 " + area() + "cm^2 입니다.");
-	}
+// 	@Override
+// 	public void printArea() {
+// 		System.out.println("원의 넓이는 " + area() + "cm^2 입니다.");
+// 	}
 	
 }
