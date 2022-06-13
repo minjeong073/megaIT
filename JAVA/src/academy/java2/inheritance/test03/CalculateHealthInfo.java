@@ -9,13 +9,14 @@ public class CalculateHealthInfo extends HealthInfo{
 		super(name, height, weight);
 	}
 
-	public void calculateStandardWeight() {
+	public double calculateStandardWeight() {
 // 		this.standardWeight = (super.getHeight() - 100) * 0.9;
 //		this.standardWeight = (super.height - 100) * 0.9;
 		this.standardWeight = (this.height - 100) * 0.9;
+		return this.standardWeight;
 	}
 	
-	public double calculateBmi() {
+	public String calculateBmi() {
 // 		double bmiPercent = (super.getWeight() - this.standardWeight) 
 // 				/ this.standardWeight * 100;
 //		double bmiPercent = (super.weight - this.standardWeight) 
