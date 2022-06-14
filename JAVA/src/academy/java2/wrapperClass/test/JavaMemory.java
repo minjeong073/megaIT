@@ -1,4 +1,4 @@
-package academy.java2.wrapperClass.test;
+package academy.java2.wrapperClass;
 
 public class JavaMemory {
     /*
