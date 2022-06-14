@@ -1,4 +1,4 @@
-package academy.java2.list.test.test04;
+package academy.java2.list.test04;
 
 import java.util.ArrayList;
 import java.util.Iterator;
