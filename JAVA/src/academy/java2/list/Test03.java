@@ -1,4 +1,4 @@
-package academy.java2.list.test;
+package academy.java2.list;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -70,13 +70,20 @@ public class Test03 {
 		for (int i = 0; i < 6; i++) {
 			int randomNum = random.nextInt(45) + 1;
 			
+//			if (lottoList.contains(randomNum)) {
+//				i--;
+//			} else {
+//				lottoList.add(randomNum);
+//			}
+
+			// 다른 방법
 			if (lottoList.contains(randomNum)) {
 				i--;
-			} else {
-				lottoList.add(randomNum);				
-			}	
+				continue;
+			}
+			lottoList.add(randomNum);
 		}
-		
+
 		lottoList.sort(Comparator.naturalOrder());
 		System.out.println(lottoList);
 		System.out.println();
@@ -90,8 +97,7 @@ public class Test03 {
 		for(String member : members) {
 			memberList.add(member);
 		}
-		
-		int[] memberCount = new int[memberList.size()];
+
 
 		// 리스트 추가
 		String[] newMembers = {"프랑키", "루피", "쵸파", "로빈", "루피", "루피", "로빈"};
@@ -100,7 +106,8 @@ public class Test03 {
 		for(String member : newMembers) {
 			newMemberList.add(member);
 		}
-		
+
+		int[] memberCount = new int[memberList.size()];
 		// 중복 확인
 		for(String member : newMemberList) {
 			int count = 0;
@@ -110,8 +117,40 @@ public class Test03 {
 			}
 			memberList.add(member);
 		}
-		
+
+		// memberCount 없는 다른 풀이 1
+		for(String member : memberList) {
+			int count = 1;
+			for (int i = 0; i < newMemberList.size(); i++) {
+				String newMember = newMemberList.get(i);
+
+				if (member.equals(newMember)) {
+
+					newMemberList.set(i, member + count++);
+				}
+			}
+		}
+		memberList.addAll(newMemberList);
+
 		System.out.println(memberList);
-				
+
+		// 다른 풀이 2
+		for (int i = 0; i < newMemberList.size(); i++) {
+			String newMember = newMemberList.get(i);
+			int count = 1;
+
+			// 중복되어서 1이 추가
+			// 또 중복되면 memberList 에 1이 있는지 확인
+			// -> 없는 경우 2를 붙임
+			while (memberList.contains(newMember)) {
+				newMember = newMemberList.get(i) + count++;
+				// 수정된 값에 count 를 더하면 문자열 추가되기 때문에
+				// 처음 값(newMemberList.get(i))에서 count 를 추가해야함
+			}
+			memberList.add(newMember);
+		}
+		System.out.println(memberList);
+
 	}
+
 }
