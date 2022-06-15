@@ -28,11 +28,6 @@ public class Product {
 		this.count = count;
 	}
 
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
-
 	@Override
 	public String toString() {
 		return "(제품명 : " + this.name + " 가격 : " + this.price 
