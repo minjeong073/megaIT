@@ -105,31 +105,31 @@ public class Test04 {
 	}
 		
 	// 다른 풀이2
-	Map<String, String> mmaxCharacter = null;
-        
-        int maxLevel = 0;
-        for (int i = 0; i < characters.size(); i++) {
-		Map<String, String> character = characters.get(i);
-			
-		String myServer = myCharacter.get("서버");
-		if (character.get("직업").equals("힐러") 
-			&& myServer.equals(character.get("서버"))) {
-//			System.out.println(character);
-//			printInfo(character);
-			
-			if (mmaxCharacter == null) {
-				mmaxCharacter = character;
-				continue;
-			}
-		}
-		
-		int level = Integer.parseInt(character.get("레벨"));
-		int maxLevel = Integer.parseInt(mmaxCharacter.get("레벨"));
-		
-		if (maxLevel < level) {
-			mmaxCharacter = character;
-		}
-	}
+//	Map<String, String> mmaxCharacter = null;
+//
+//        int maxLevel = 0;
+//        for (int i = 0; i < characters.size(); i++) {
+//		Map<String, String> character = characters.get(i);
+//
+//		String myServer = myCharacter.get("서버");
+//		if (character.get("직업").equals("힐러")
+//			&& myServer.equals(character.get("서버"))) {
+////			System.out.println(character);
+////			printInfo(character);
+//
+//			if (mmaxCharacter == null) {
+//				mmaxCharacter = character;
+//				continue;
+//			}
+//		}
+//
+//		int level = Integer.parseInt(character.get("레벨"));
+//		int maxLevel = Integer.parseInt(mmaxCharacter.get("레벨"));
+//
+//		if (maxLevel < level) {
+//			mmaxCharacter = character;
+//		}
+//	}
         
         System.out.println("최고 레벨 " + maxLevel);
         System.out.println(mmaxCharacter);
