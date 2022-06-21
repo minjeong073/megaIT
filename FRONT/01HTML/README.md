@@ -32,3 +32,25 @@
 
 + button
   + type="button" 추가하는게 좋음
+  + < input type="button" value="제출"> 로도 가능
+
+<hr>
+
+### table
+
++ tr
+  + 줄(행)
+  + 안에 < td> 칸(열) 들어가야함
+
++ thead
+  + 표 머리
+  + < th> : 굵은 글씨
+
++ tbody
+  +  표 몸통
+
++ span
+  + 병합하고자 하는 첫번째 칸에 속성 추가
+  + colspan : 가로 병합
+  + rowspan : 세로 병합
+  + 병합할 경우 해당 col 또는 row 삭제해야함
