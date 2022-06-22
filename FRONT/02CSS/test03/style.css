@@ -1,0 +1,45 @@
+
+.year {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.month {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+table {
+  width: 80%;
+  height: 500px;
+  font-size: 13px;
+  background-color: rgb(245, 251, 255);
+  border: 1px solid blue;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th {
+  background-color: rgb(184, 209, 255);
+  font-size: 13px;
+  border: 2px solid white;
+}
+
+tr :hover {
+  background-color: antiquewhite;
+}
+
+tr, td {
+  vertical-align: top;
+  border: 2px solid white;
+}
+
+.sunday, .national-holiday {
+  color: red
+}
+
+.today {
+  background-color: rgb(255, 238, 164);
+  font-weight: bold;
+}
+
