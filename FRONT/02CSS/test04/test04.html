@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>외부 스타일 시트2 - 가계부</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+    <h1>2021년 3월 가계부</h1>
+
+    <table>
+
+      <thead>
+        <tr class="header-row">
+          <th>날짜</th>
+          <th>사용처</th>
+          <th>결제</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="mouse-over">
+          <th>3월 4일</th>
+          <th>식재료 쇼핑</th>
+          <th>신한카드</th>
+          <th>87,000원</th>
+        </tr>
+        
+        <tr class="mouse-over">
+          <th>3월 2일</th>
+          <th>기름 주유</th>
+          <th>국민카드</th>
+          <th>50,000원</th>
+        </tr>
+
+        <tr class="mouse-over">
+          <th>3월 2일</th>
+          <th>떡볶이</th>
+          <th>현금</th>
+          <th>12,000원</th>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr class="footer-row">
+          <th>합계</th>
+          <th colspan="3" class="sum">149,000원</th>
+        </tr>
+      </tfoot>
+    </table>
+
+    <p>
+      <label>날짜 : </label><input type="text">
+      <label>사용처 : </label><input type="text">
+      <label>결제 : </label><input type="text">
+      <label>가격 : </label><input type="text">
+    </p>
+
+    <button type="button">저장하기</button>
+
+
+
+  </body>
+</html>
