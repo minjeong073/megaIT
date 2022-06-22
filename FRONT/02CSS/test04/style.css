@@ -1,0 +1,46 @@
+table {
+  width: 80%;
+  height: 60%;
+  font-weight: normal;
+}
+
+thead {
+  font-size: large;
+  font-weight: bold;
+}
+
+.header-row {
+  background-color: #c1c6f8;
+  height: 30px;
+}
+
+.footer-row {
+  background-color: #c1c6f863;
+  height: 35px;
+}
+
+.sum {
+  text-align: right;
+}
+
+/* 마우스 행 색 변경 */
+.mouse-over:hover {
+  background-color: rgb(255, 231, 231);
+}
+
+p {
+  width: 80%;
+  font-weight: bold;
+}
+
+input {
+  height: 25px;
+  font-size: 10px;
+}
+
+button {
+  width: 80%;
+  font-weight: bold;
+  font-size: large;
+  
+}
