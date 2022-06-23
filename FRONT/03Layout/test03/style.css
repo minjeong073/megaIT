@@ -1,0 +1,46 @@
+#wrap {
+  width: 1200px;
+  height: 1000px;
+  background-color: aquamarine;
+}
+
+/* 150 720 130 */
+header {
+  height: 150px;
+  background-color: cadetblue;
+}
+
+.contents {
+  width: 900px;
+  height: 720px;
+  background-color: chocolate;
+}
+
+.sub-content {
+  width: 300px;
+  height: 720px;
+  background-color: darkgreen;
+}
+
+footer {
+  height: 130px;
+}
+/* 200 800 200 */
+.footer1 {
+ width: 200px; 
+ background-color: blue;
+}
+
+.footer2 {
+  width: 800px; 
+  background-color: lightcoral;
+}
+
+.footer3 {
+  width: 200px; 
+  background-color: deepskyblue;
+}
+
+.flex-row {
+  display: flex;
+}
