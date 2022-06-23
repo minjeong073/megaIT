@@ -1,0 +1,68 @@
+#wrap {
+  width: 1200px;
+  /* height: 580px;
+  background-color: coral; */
+  margin: auto;
+}
+
+header {
+  width: 200px;
+  height: 100px;
+  background-color: cornflowerblue;
+}
+
+nav {
+  width: 1000px;
+  height: 100px;
+  background-color: crimson;
+}
+
+.contents {
+  height: 400px;
+  background-color: darkorange;
+}
+
+.main-content {
+  height: 400px;
+  background-color: darkcyan;
+}
+
+article {
+  width: 600px;
+  /* height: 400px;
+  background-color: gold; */
+}
+
+.article1 {
+  height: 200px;
+  background-color: blue;
+}
+
+.article2 {
+  height: 200px;
+  background-color: darksalmon;
+}
+
+footer {
+  height: 80px;
+  background-color: firebrick;
+}
+
+.footer-logo1 {
+  width: 200px;
+  background-color: lime;
+}
+
+.footer-copyright {
+  width: 800px;
+  background-color: darkorchid;
+}
+
+.footer-logo2 {
+  width: 200px;
+  background-color: aquamarine;
+}
+
+.flex-row {
+  display: flex;
+}
