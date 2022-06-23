@@ -1,11 +1,11 @@
 
-.line-flex {
-  display: flex;
-}
-
 .box {
   width: 200px;
   height: 200px;
+}
+
+.line-flex {
+  display: flex;
 }
 
 .red-box {
@@ -24,12 +24,12 @@
   background-color: blue;
 }
 
-.left-margin {
-  margin: 10px 10px 10px 0px;
+.margin-bottom-20 {
+  margin-bottom: 20px;
 }
 
-.right-margin {
-  margin: 10px 0px 10px 10px;
+.margin-right-20 {
+  margin-right: 20px;
 }
 
 .box-align {
