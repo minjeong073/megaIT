@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <p>
+    <p>
     <div class="line-flex">
       <div class="box red-box"></div>
       <div class="box green-box"></div>
@@ -19,29 +19,35 @@
     </div>
   </p>
 
+  <!-- margin -->
   <p>
-    <div class="line-flex">
-      <div class="box red-box left-margin"></div>
-      <div class="box green-box right-margin"></div>
+    <div class="line-flex margin-bottom-20">
+      <div class="box red-box margin-right-20"></div>
+      <div class="box green-box "></div>
     </div>
 
     <div class="line-flex">
-      <div class="box yellow-box left-margin"></div>
-      <div class="box blue-box right-margin"></div>
+      <div class="box yellow-box margin-right-20"></div>
+      <div class="box blue-box"></div>
     </div>
   </p>
 
-  <p>
-    <div class="line-flex box-align">
-      <div class="box red-box left-margin"></div>
-      <div class="box green-box right-margin"></div>
-    </div>
-
-    <div class="line-flex box-align">
-      <div class="box yellow-box left-margin"></div>
-      <div class="box blue-box right-margin"></div>
-    </div>
-  </p>
+  <!-- margin + center -->
+  <div class="line-flex box-align"> 
+    <!-- (red green) (yellow blue) 를 line-flex 해버림 -> 한줄로 정렬 -->
+    <!-- 안쪽 <div> 기준으로 하기 때문에 한번 더 div 로 묶으면 해결 -->
+      <div>
+        <div class="line-flex margin-bottom-20">
+          <div class="box red-box margin-right-20"></div>
+          <div class="box green-box"></div>
+        </div>
+    
+        <div class="line-flex ">
+          <div class="box yellow-box margin-right-20"></div>
+          <div class="box blue-box "></div>
+        </div>
+      </div>
+  </div>
 
 </body>
 </html>
