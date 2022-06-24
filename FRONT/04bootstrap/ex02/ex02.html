@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>레이아웃2</title>
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+
+  <body>
+  
+    <div id="wrap">
+      <header>
+        <!-- margin : m - 1 ~ 5 , mt mr mb ml -->
+        <!-- margin 상쇄
+            : 두개의 div 가 가로로 배치되어있을 때
+            둘의 margin 이 동시에 적용되면 한쪽만 사용되고 상쇄됨
+
+            h1에서의 margin : 상위 태그에 margin이 없으면 해당 margin이
+            상위 태그로 넘어가게됨
+            -> margin 대신 padding 으로 
+        -->
+        <!-- padding : p - 1 ~ 5 , pt pr pb pl -->
+        <h1 class="text-center pt-3">Naver</h1>
+      </header>
+
+      <nav class="main-menu bg-warning">
+        <ul class="nav nav-fill mt-3">
+          <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">메일</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">카페</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">블로그</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">지식인</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">쇼핑</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">부동산</a></li>
+        </ul>
+      </nav>
+      
+      <section class="contents d-flex">
+        <article class="h-100 col-10">
+          <!-- 컨텐츠 -->
+          <div class="d-flex mt-4">
+            <div class="col-3">
+              <img width="180" alt="양" src="https://cdn.pixabay.com/photo/2021/11/22/16/45/sheeps-6816871__340.jpg">
+            </div>
+
+            <div class="col-9"> 
+              <div class="text-info font-weight-bold mt-2">리빙</div>
+              <div class="font-weight-bold mt-1">동글동글 한입에 쏘~옥 초간단 옥수수 볼</div>
+              <div class="mt-1"><small>먹음직스러운 비주얼에 옥수수가 콕콕
+              앙증맞은 사이즈의 아이 간식으로 최고</small></div>
+
+              <div class="mt-1">#간단베이킹 #원볼레시피</div>
+
+            </div>
+          </div>
+
+          <div class="d-flex mt-4">
+            <div class="col-3">
+              <img width="180" alt="양" src="https://cdn.pixabay.com/photo/2022/05/27/10/35/strawberry-7224875__340.jpg">
+            </div>
+
+            <div class="col-9"> 
+              <div class="text-info font-weight-bold mt-2">리빙</div>
+              <div class="font-weight-bold mt-1">동글동글 한입에 쏘~옥 초간단 옥수수 볼</div>
+              <div class="mt-1"><small>먹음직스러운 비주얼에 옥수수가 콕콕
+              앙증맞은 사이즈의 아이 간식으로 최고</small></div>
+
+              <div class="mt-1">#간단베이킹 #원볼레시피</div>
+
+            </div>
+          </div>
+        </article>
+        <aside class="h-100 col-2 bg-warning"></aside>
+      </section>
+
+      <footer class="text-center">
+        Copyright © mingdong. All rights reserved
+      </footer>
+    </div>
+
+  </body>
+</html>
