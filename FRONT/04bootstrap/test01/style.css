@@ -1,0 +1,25 @@
+#wrap {
+  width: 1200px;
+  /* height: 800px;
+  margin: auto; */
+}
+
+header > .main-header {
+  height: 100px;
+}
+
+header > .main-menu {
+  height: 100px;
+}
+
+.main-contents {
+  height: 600px;
+}
+
+footer > .footer1 {
+  height: 100px;
+}
+
+footer > .footer2 {
+  height: 100px;
+}
