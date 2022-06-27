@@ -1,0 +1,16 @@
+#wrap {
+  width: 1200px;
+  margin: auto;
+}
+
+header {
+  height: 80px;
+}
+
+section {
+  height: 400px;
+}
+
+footer {
+  height: 100px;
+}
