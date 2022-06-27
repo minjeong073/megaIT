@@ -1,0 +1,37 @@
+
+.box {
+  width: 200px;
+  height: 200px;
+}
+
+.line-flex {
+  display: flex;
+}
+
+.red-box {
+  background-color: red;
+}
+
+.green-box {
+  background-color: green;
+}
+
+.yellow-box {
+  background-color: yellow;
+}
+
+.blue-box {
+  background-color: blue;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.box-align {
+  justify-content: center;
+}
