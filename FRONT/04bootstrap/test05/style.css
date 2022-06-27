@@ -1,0 +1,24 @@
+#wrap {
+  width: 1200px;
+  margin: auto;
+}
+
+header {
+  height: 100px;
+}
+
+nav {
+  height: 50px;
+}
+
+.main-menu {
+  background-color: #f2e3f9;
+}
+
+.main-contents {
+  height: 900px;
+}
+
+footer {
+  height: 100px;
+}
