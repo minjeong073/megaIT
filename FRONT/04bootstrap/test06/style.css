@@ -1,0 +1,45 @@
+#wrap {
+  width: 1200px;
+  margin: auto;
+}
+
+header {
+  height: 100px;
+}
+
+section {
+  height: 600px;
+}
+
+.main-contents > .main-menu {
+  width: 200px;
+}
+
+.main-contents .nav-link {
+  color: black;
+}
+
+.main-contents .nav-link:hover {
+  color: crimson;
+  background-color: #bbbbbb;
+}
+
+.main-contents > .contents {
+  width: 1000px;
+  align-content: space-around;
+  justify-content: space-evenly;
+}
+
+/* div 가 늘어나지 않도록 크기 지정 */
+.contents > .content {
+  width: 300px;
+}
+
+.content > .content-name {
+  margin-top: 10px;
+  text-overflow: ellipsis;
+}
+
+.content-name:hover {
+  color: crimson;
+}
