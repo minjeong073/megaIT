@@ -1,0 +1,72 @@
+
+## "bootstrap"
+: 반응형, 모바일 우선인 웹프로젝트 개발을 위한
+html, css, js framework
+
+link, script tag 로 연결해서 사용
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+cdn : content delivery network
+    : 유튜브에서 많이 쓰임
+     -> 해외 server 에서 가져오려면 시간이 많이 소요됨
+     -> 중간 중개 server (=cdn)를 만듦
+     => cdn 에 영상 요청 -> 메인 server 에 요청해서 cdn 이 받아서
+        사용자에게 보여줌
+     -> 캐시를 만들어서 일정 시간동안 보지 않을 경우 삭제하도록 용량 설정
+    : 한 서버에 사용자가 쏠리는 현상 방지하기 위함(분산)
+    
+
+col : 가로 비율
+    : 0 ~ 12 등분으로 나눴을 때 몇 칸을 차지할지
+    : 안쪽에 padding 이 자동으로 들어가게 됨
+
+d-flex : "display : flex" 와 동일
+
+h-숫자 : 25 50 75 100 % 단위로 나누기
+
+
+
+색상 명칭	설명	결과
+primary	파란색	파랑
+secondary	회색	회색
+success	초록색	초록색
+danger	빨간색	빨간색
+warning	노란색	노란색
+info	하늘색	하늘색
+light	연한 회색	연한 회색
+dark	어두운 회색	어두운 회색
+white	흰색	흰색
+transparent	투명색	
+
+
+nav > ul class="nav" > li class="nav-item"
+> a href="#" class="nav-link"
+
+text-dark, <font-weight-bold></font-weight-bold>
+
+가로 : justify-content- {arount, between, end, center}
+세로 : align-items- {start, center, end}
+
+
+flex container
+- 속성
+display : flex container 로 만들기 위함
+        - flex : block 엘리먼트
+        - inline-flex : inline 엘리먼트
+flex-direction : flex item 의 주축 방향 설정
+                - row : 행(가로) (default)
+                - column : 열(세로)
+flex-wrap : flex item 의 줄바꿈 설정
+          - wrap : 줄바꿈
+flex-flow : flex-direction 과 flex-wrap 축약
+          - column wrap; 으로 사용
+justify-content : 주축 정렬 방법(가로줄)
+                - 
+align-content : 교차축 줄 정렬 방법(세로줄)
+align-items : 교차축 컨텐츠 정렬 방법
