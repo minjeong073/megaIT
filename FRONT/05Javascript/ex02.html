@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 반복문</title>
+  
+  </head>
+
+  <body>
+    
+    <script>
+
+      // 반복문
+      // 1 부터 5까지
+
+      for (let i = 1; i <= 5; i++) {
+        console.log(i);
+      }
+
+      // 배열, 리스트
+
+      let array = [10 ,20, 30, 40, 50];
+
+      console.log(array);
+
+      // 배열에 값 추가 
+      array.push(60);
+      array.push(70);
+
+      console.log(array);
+
+      for(let i = 0; i < array.length; i++) {
+        console.log(array[i]);
+      }
+
+
+      // 인덱스 기반의 반복 : in
+
+      // java for (String str : strings) 와 동일하게 하나씩 넘어감
+      // index 에는 array 의 index 가 저장됨
+
+      for(let index in array) {
+        console.log(index);
+        console.log(array[index]);
+      }
+
+      // 값 기반의 반복 : of
+
+      for(let number of array) {
+        console.log(number)
+      }
+
+
+      // Dictionary 
+      // Java Map 과 동일 (key : value)
+
+      let scoreInfo = {'국어':90, '수학':100, '영어':90};
+
+      console.log(scoreInfo);
+      // key 알고 있다고 가정하고
+      console.log(scoreInfo['국어']);
+
+      // 멤버변수 접근 하듯이 . 으로
+      console.log(scoreInfo.영어);
+
+      // 이름, 나이, 성별
+      // java : 멤버변수 만들어서 클래스, 객체 생성
+
+      let person = {};  // 비어져 있는 dictionary
+      person['name'] = 'minjeong';
+      person['age'] = 25;
+      person['gender'] = 'woman';
+
+      console.log(person);
+
+      // value 변경 방법
+      person['age'] = 40;
+      console.log(person);
+
+      person.age = 30;
+      console.log(person);
+
+      // 삭제
+      delete person['gender'];
+      console.log(person);
+
+      // 반복문
+      for(let key in person) {
+        console.log(key);
+        console.log(person[key]);
+      }
+
+      // dictionary 안에 특정 키가 존재하는지 확인
+      if ('age' in person) {
+        console.log('age 가 있다')
+      }
+
+    </script>
+
+
+  </body>
+</html>
