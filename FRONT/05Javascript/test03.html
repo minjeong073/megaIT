@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <script>
+
+      var text = "I must do what I want to do";
+
+      // 문자열 길이
+      console.log(text.length); // 출력 : 27
+      
+      // 특정 위치의 문자
+      console.log(text.charAt(10)); // 출력 : w
+
+      // 특정 문자열의 위치 찾기
+      console.log(text.indexOf('must'));  // 출력 : 2
+
+      // 특정 문자열 포함 여부 확인
+      console.log(text.includes('to')); // true
+      console.log(text.includes('from')); // false
+
+      // 특정 문자열을 다른 문자열로 변경
+      console.log(text.replace('I', 'You'));  
+      // 중복될 경우 제일 첫번째 해당 문자열만 변경됨
+      // 출력 : You must do what I want to do
+
+      // + 중복되는 모든 문자열 변경
+      console.log(text.replace(/I/g, 'You'));
+      // 정규표현식(Regular Expression) 을 사용한 것
+      // /(패턴)/g : 문자열에서 해당하는 모든 패턴 검색
+      // 출력 : You must do what You want to do
+
+
+      // 문자열 자르기
+      // java .substring(startIndex, endIndex);
+      console.log(text.slice(7,9)); // 출력 : do
+
+      // 문자열 쪼개기
+      let part = text.split(' '); // array type
+      console.log(part);  
+      // 출력 : (8) ['I', 'must', 'do', 'what', 'I', 'want', 'to', 'do']
+      
+      // 문자열의 앞 뒤 공백 제거
+      let content = '             안녕     ';
+      console.log(content); // 그대로 출력 :              안녕     .
+      console.log(content.trim());  // 출력 : 안녕
+
+
+    </script>
+
+  </body>
+</html>
