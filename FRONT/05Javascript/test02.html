@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>반복문과 자료형</title>
+  </head>
+
+  <body>
+
+    <script>
+      
+      // 1.
+
+      for(let i = 0; i < 5; i++) {
+        // alert(i+1);
+      }
+
+      // 2.
+      var array = [5, 4, 23, 7, 11, 10, 15, 20, 15, 8];
+      let sum = 0;
+
+      for(let i = 0; i < array.length; i++) {
+        sum += array[i];
+      }
+      console.log(sum);
+
+      // 향상된 for문
+      for(let number of array) {
+        sum += number;
+      }
+      
+
+      // 3.
+      var goods = {"name": "육개장", "price": 1300, "expirationDate":"2021/07/04"};
+
+      console.log('제품 : ' + goods.name + ' 가격 : ' + goods.price 
+        + ' 유통기한 : ' + goods.expirationDate);
+
+
+      // 4.
+      var restaurantList = [
+        {"name":"토속촌", "menu":"한식", "location":"서울 종로구"}, 
+        {"name":"아이러브떡볶이", "menu":"분식", "location":"서울 중구"}, 
+        {"name":"영동족발", "menu":"고기", "location":"서울 서초구"}, 
+        {"name":"연돈", "menu":"일식", "location":"제주도"}, 
+        {"name":"쿠이", "menu":"양식", "location":"부산"},
+        {"name":"하남돼지집", "menu":"고기", "location":"성남시 분당구"}
+      ];
+
+
+      // for(let i in restaurantList) {
+      //   if (restaurantList[i].menu != '고기') {
+      //     console.log('상호명 : ' + restaurantList[i].name 
+      //     + ' 위치 : ' + restaurantList[i].location);
+      //   }
+      // }
+
+      //  굳이 index 기반으로 하지 않아도 됨  --> of 사용하기
+      for(let store of restaurantList) {
+        if (store.menu != '고기') {
+          console.log('상호명 : ' + store.name + ' 위치 : ' + store.location)
+        }
+      }
+
+    </script>  
+  </body>
+</html>
