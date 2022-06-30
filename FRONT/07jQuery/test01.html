@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ready click 이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+  </head>
+
+  <body>
+    
+    <!-- Q1 비밀번호 일치 -->
+    <div >
+      <h2>1. 비밀번호 일치</h2>
+
+      비밀번호 :
+      <input type="password" id="pwInput1">
+      비밀번호 확인 :
+      <input type="password" id="pwInput2">
+      <button type="button" id="pwBtn">확인</button>
+    </div>
+
+    <hr>
+
+    <!-- Q2 금칙어 -->
+    <div>
+      <h2>2. 금칙어</h2>
+
+      <input type="text" id="wordInput">
+      <button type="button" id="wordBtn">검색</button>
+
+    </div>
+
+    <hr>
+
+    <!-- Q3 더보기 -->
+    <div>
+      <h2>3. 더보기</h2>
+      <button type="button" id="additionBtn">펼치기</button>
+      <div id="additionText">-추가 설명입니다-</div>
+    </div>
+
+    <script>
+
+      $(document).ready(function() {
+
+//      1.
+        $("#pwBtn").on('click', function() {
+
+          if ($("#pwInput1").val() == '' || $("#pwInput2").val() == '') {
+            alert("비밀번호를 입력해주세요");
+          }
+  
+          else {
+            let pw = $("#pwInput1").val();
+            let pw2 = $("#pwInput2").val();
+    
+            if (pw == pw2) {
+              alert('확인 완료');
+            } else {
+              alert('비밀번호가 일치하지 않습니다')
+            }
+          }
+        })
+
+
+//        2.
+        var bannedWords = ["십장생", "시베리아", "조카신발", "쌍쌍바", "십원짜리"];
+
+        $("#wordBtn").on('click', function() {
+
+          let input = $("#wordInput").val();
+          
+          for (let word of bannedWords) {
+            if (input) {
+              alert('금칙어가 포함되어 있습니다. 검색할 수 없습니다.');
+            }
+          }
+        });
+
+
+//        3.
+
+        $("#additionBtn").on('click', function() {
+
+          if ($("#additionText").is(':visible')) {
+            $("#additionText").hide();
+          } else {
+            $("#additionText").show();
+          }
+
+
+        });
+
+
+
+
+      });
+
+
+
+      
+
+    </script>
+
+  </body>
+</html>
