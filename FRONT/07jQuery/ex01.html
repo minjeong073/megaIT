@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+
+      .bigBox {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <h2 id="title">jQuery 예제</h2>
+    <!-- Q1 -->
+    <input type="text" id="textInput">
+    <button type="button" id="button">버튼</button>
+
+    <!-- Q2 -->
+    <div id="textDiv"></div>
+    <input type="text" id="copyInput">
+
+    <!-- Q3 -->
+    <div class="box" id="colorBox"></div>
+    <button type="button" id="changeBtn">색바꾸기</button>
+    <!-- Q4 -->
+    <button type="button" id="hideBtn">숨기기</button>
+
+    <hr>
+
+    <a href="https://naver.com" id="link">네이버로 이동</a>
+    <button type="button" id="changeLinkBtn">구글로 변경</button>
+
+
+
+
+    <script>
+      // $('#title') : id='title' 객체 자체
+      // $('#title').text('jQuery 시작')
+      // alert($('#title').text());
+
+      // function 미리 등록해두고 event 가 발생했을 때 function 실행
+
+      // document 가 ready 됐을 때 수행할 function { 수행 내용 코드}
+      // ready = event
+      $(document).ready(function() {
+        // DOM Tree 가 준비 완료 되면 호출되는 코드
+        // function 등록
+
+        // 오타 없는지 alert()으로 확인
+        // alert();
+
+        // Q1 버튼이 클릭 되었을 때(=이벤트 발생) input 에 입력된 내용을 alert
+        $("#button").on("click", function() {
+          // input 에 입력된 내용 alert
+
+          // .text() : tag 안의 내용 가져올 때
+          // .val() : input 으로 가져온 속성(내용) 가져올 때
+          
+          let inputText = $("#textInput").val();
+          // alert(inputText);
+
+
+          // Q2 특정 div 태그에 input 에 입력된 내용 보여주기
+          $("#textDiv").text(inputText);
+          $("#copyInput").val(inputText);
+        });
+
+
+        // Q3 div 박스 색 바꾸기 
+        $("#changeBtn").on('click', function() {
+          // 간단한 css style 일 경우
+          // $("#colorBox").css('background-color', 'blue');
+          
+          // Q3-1 많은 css 를 바꿔야 할 경우 -> class 추가
+          // $("#colorBox").addClass('bigBox');
+          // $("#colorBox").removeClass('box');
+          
+
+          // Q3-2 현재 box 클래스라면 bigBox 클래스 추가
+          if ($("#colorBox").hasClass("box")) {
+            $("#colorBox").addClass('bigBox');
+            $("#colorBox").removeClass('box');
+          }
+
+          // Q3-3 현재 bigBox 클래스라면 box 클래스 추가
+           else {
+            $("#colorBox").addClass('box');
+            $("#colorBox").removeClass('bigBox');
+          }
+
+        });
+
+        // Q4 div 박스 숨기기
+        $("#hideBtn").on('click', function() {
+          // click 이벤트가 등록되어서 잘 작동하는지 확인하려면
+          // alert() 해보기
+
+          // $("#colorBox").hide();
+
+          // Q4-1 div 가 보여지는 상태이면 숨기기
+          // .is("@@") 어떤 상태가 @@ 인지 아닌지
+          if ($("#colorBox").is(":visible")) {
+            $("#colorBox").hide();
+          }  
+
+          // Q4-2 div 가 숨겨진 상태이면 보여지기 (= toggle)
+          else {
+            $("#colorBox").show();
+          }
+        });
+        
+
+        // Q5 링크 주소 바꾸기
+        $("#changeLinkBtn").on('click', function() {
+          // .attr() (attribute) : 특정 속성 바꾸기
+          $("#link").attr('href', 'https://google.com')
+
+        });
+
+      });
+
+
+
+    </script>
+
+
+  </body>
+</html>
