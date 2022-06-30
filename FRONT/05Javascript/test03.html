@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>문자열</title>
+    </head>
+
+    <body>
+        <script>
+
+            // 1. 길이 제한
+            var userid = "my_id_very_simple";
+
+            if (userid.length > 8) {
+                alert('id는 8자를 넘길 수 없습니다. ' + userid.slice(0,8));
+            }
+
+
+            // 2. 파일 이름
+            var path = "/Users/master/Document/image/city.jpg";
+
+            let pathString = path.split('/');
+            for(let string of pathString) {
+                if (string.endsWith('.jpg')) {
+                    console.log(string);
+                }
+            }
+
+
+            // 3. 데이터 정리
+            var info = {
+                "name":"김 인규",
+                "phoneNumber":"01012345678",
+                "introduce":"    안녕하세요. 저는 기분이 좋네요.  "
+            };
+
+            let name = info.name.split(' ')[0] + info.name.split(' ')[1];
+
+            let number = info.phoneNumber.slice(0,3) + '-'
+                + info.phoneNumber.slice(3,7) + '-'
+                + info.phoneNumber.slice(7,11);
+
+            let introduce = info.introduce.trim();
+
+            console.log('이름 : ' + name + ' 전화번호 : '
+                + number + ' 소개 : ' + introduce);
+
+
+            // 4. 문자열 데이터
+            var membersString = "루피:19931005,조로:19890513,나미:19970705,쵸파:20040932";
+
+            let memberList1 = membersString.split(',');
+
+            var memberList = [];
+            for (let member of memberList1) {
+                let members = {};
+
+                members['name'] = member.split(':')[0];
+                members['birth'] = member.split(':')[1];
+
+                memberList.push(members);
+            }
+            console.log(memberList);
+
+
+            // 5. 생월 찾기
+
+            for (let member of memberList) {
+                if (member.birth.charAt(5) === '7') {
+                    console.log(member.name);
+                }
+            }
+
+
+        </script>
+
+    </body>
+</html>
