@@ -1,0 +1,66 @@
+jQuery
+
+:js 를 간편하게 사용할 수 있도록 단순화
+
+<div id="content">Hello World</div>
+let content = document.getElementById('content');
+content.innerText = 'Hello World';
+= 동일
+$('#content').text('Hello World');
+
+---------------------------------------------------
+
+.text() : div 에서 값 넣고 싶을 때
+.val() : input 에서 값 넣고 싶을 때
+
+문서 로딩 이벤트
+
+$("document"). @@@ : 웹 문서가 잘 로드되었는지 확인
+.ready() :  DOM tree 가 완성된 상태
+.load() : image, css 가 모두 load 된 상태
+.error() : 요소에 오류가 발생된 상태
+(ex 
+$(document).ready(function() {
+  alert("DOM tree 구성 완료");
+});
+)
+
+
+마우스 동작 이벤트
+
+.on() : 이벤트 바인딩
+      : (이벤트 종류, 함수)
+
+- 이벤트 종류
+click, dbclick, mouseover, mouseleave, hover, scroll      
+
+(ex
+$(selector).on('click', function(e) {
+  alert("클릭 되었다");
+});
+)
+
+
+상태 변경 이벤트
+
+.change() : selector 값이 변경됐을 경우
+
+.attr() : 특정 속성 바꾸기
+
+val()	요소의 값 가져오기
+val('text')	요소 속에 'text' 값 넣기
+text('text')	태그 사이에 'text' 값 넣기
+show()	요소를 나타낸다.
+hide()	요소를 숨긴다.
+hasClass(클래스명)	요소에 클래스가 있는지 확인한다
+addClass('클래스명')	요소에 클래스를 추가한다
+removeClass('클래스명')	요소에 클래스를 제거한다
+css('속성명')	요소에 css 속성명으로 속성값을 가져온다.
+css('속성명', '속성값')	요소에 css 속성과 값을 세팅한다.
+attr('속성명')	속성명에 해당하는 속성값을 가져온다.
+attr('속성명', '속성값')	해당 속성명에 속성값을 부여한다.
+예) $("a").attr("href", "http://google.com")
+a 태그의 링크를 google 사이트로 설정
+prop('프로퍼티명', boolean)	프로퍼티에 대한 설정(checked, selected, disabled)
+예) $("input").prop("checked", true);
+input 태그에 체크를 설정한다.
