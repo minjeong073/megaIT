@@ -70,7 +70,7 @@
     <div>
       <h2>5. 이미지 교체</h2>
       <button type="button" id="beforeBtn">이전</button>
-      <img src="lighthouse-6915406__340.jpg" id="myImage">
+      <img alt="3개 image" src="lighthouse-6915406__340.jpg" id="myImage">
       <button type="button" id="afterBtn">다음</button>
     </div>
 
@@ -120,8 +120,10 @@
 
           if ($("#additionText").is(':visible')) {
             $("#additionText").hide();
+            $("#additionBtn").text('펼치기');
           } else {
             $("#additionText").show();
+            $("#additionBtn").text('닫기');
           }
         });
 
@@ -140,7 +142,7 @@
         });
 
 //        5.
-        let images = ["lighthouse-6915406__340.jpg", "poppies-7140807__340.jpg", "strawberries-7249448__340.jpg"];
+        let images = ["lighthouse-6915406__340.jpg", "poppies-7140807__340.jpg", "cat-2536662__340.jpg"];
         var flag = 0;
 
         $("#beforeBtn").on('click', function () {
