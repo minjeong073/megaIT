@@ -4,7 +4,22 @@
     <meta charset="UTF-8">
     <title>ready click 이벤트</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    
+
+    <style>
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: crimson;
+      }
+
+      .changeBox {
+        width: 500px;
+        height: 500px;
+        background-color: cornflowerblue;
+      }
+    </style>
+
   </head>
 
   <body>
@@ -40,6 +55,26 @@
       <div id="additionText">-추가 설명입니다-</div>
     </div>
 
+    <hr>
+
+    <!-- Q4 사각형 바꾸기 -->
+    <div>
+      <h2>4. 사각형 바꾸기</h2>
+      <div class="box" id="colorBox"></div>
+      <button type="button" id="changeBtn">교체</button>
+    </div>
+
+    <hr>
+
+    <!-- Q5 이미지 교체 -->
+    <div>
+      <h2>5. 이미지 교체</h2>
+      <button type="button" id="beforeBtn">이전</button>
+      <img src="lighthouse-6915406__340.jpg" id="myImage">
+      <button type="button" id="afterBtn">다음</button>
+    </div>
+
+
     <script>
 
       $(document).ready(function() {
@@ -72,7 +107,7 @@
           let input = $("#wordInput").val();
           
           for (let word of bannedWords) {
-            if (input) {
+            if (input.includes(word)) {
               alert('금칙어가 포함되어 있습니다. 검색할 수 없습니다.');
             }
           }
@@ -80,7 +115,7 @@
 
 
 //        3.
-
+        $("#additionText").hide();
         $("#additionBtn").on('click', function() {
 
           if ($("#additionText").is(':visible')) {
@@ -88,18 +123,45 @@
           } else {
             $("#additionText").show();
           }
-
-
         });
 
 
+//        4.
+        $("#changeBtn").on('click', function () {
+
+          if ($("#colorBox").hasClass('box')) {
+            $("#colorBox").addClass('changeBox');
+            $("#colorBox").removeClass('box');
+          }
+          else {
+            $("#colorBox").addClass('box');
+            $("#colorBox").removeClass('changeBox');
+          }
+        });
+
+//        5.
+        let images = ["lighthouse-6915406__340.jpg", "poppies-7140807__340.jpg", "strawberries-7249448__340.jpg"];
+        var flag = 0;
+
+        $("#beforeBtn").on('click', function () {
+          flag--;
+          if (flag < 0) {
+            flag = 2;
+          }
+          $("#myImage").attr('src', images[flag]);
+        });
+
+        $("#afterBtn").on('click', function () {
+          flag++;
+          if (flag > 2) {
+            flag = 0;
+          }
+          $("#myImage").attr('src', images[flag]);
+        });
 
 
       });
 
-
-
-      
 
     </script>
 
