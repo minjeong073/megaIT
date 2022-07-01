@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <style>
+      .more-div {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <!-- 1 -->
+    <h1>1. 비밀번호 일치</h1>
+
+    <label>비밀번호 : </label> <input type="password" id="password">
+    <label>비밀번호 확인 : </label> <input type="password" id="passwordConfirm">
+    <button type="button" id="confirmBtn">확인</button>
+
+    <hr>
+
+    <!-- 2 -->
+    <h1>2. 금칙어</h1>
+    <input type="text" id="searchKeyword">
+    <button type="button" id="searchBtn">검색</button>
+
+    <hr>
+
+    <!-- 3 -->
+    <h1>3. 더보기</h1>
+    <button type="button" id="moreBtn">펼치기</button>
+    <div class="more-div" id="moreDiv">추가 설명입니다!</div>
+    <!--  숨길 때 stylesheet 로 
+      -> 페이지 처음 뜰 때 조금이라도 보일 수 있는 것 방지 -->
+
+    <!-- 4 -->
+
+    <hr>
+    
+    <!-- 5 -->
+    <h1>5. 이미지 교체</h1>
+    <button type="button" id="prevBtn">이전</button>
+    <img width="300" src="https://cdn.pixabay.com/photo/2014/08/27/18/24/girl-429380__340.jpg" id="image" alt="image">
+    <button type="button" id="nextBtn">다음</button>
+
+
+    <script>
+
+      $(document).ready(function() {
+
+        // 1.
+        $("#confirmBtn").on('click', function() {
+
+          // 비밀번호가 입력되지 않았을 경우 경고창
+          let password = $("#password").val();
+          let passwordConfirm = $("#passwordConfirm").val();
+
+          // alert(password);
+          // 아무것도 안뜰 경우 -> '' 빈 문자열
+          // null, undefined 일 경우 그 문구가 뜸
+          if (password == '') {
+            alert('비밀번호를 입력하세요');
+          } else if (password == passwordConfirm) {
+            alert('확인 완료');
+          } else {
+            alert('비밀번호가 일치하지 않습니다');
+          }
+        });
+
+
+        // 2.
+        var bannedWords = ["십장생", "시베리아", "조카신발", "쌍쌍바", "십원짜리"];
+
+        $("#searchBtn").on('click', function() {
+          let searchKeyword = $("#searchKeyword").val();
+
+          // index 기반 for문
+          for(let i = 0; i < bannedWords.length; i++) {
+            let word = bannedWords[i];
+
+            if (searchKeyword.includes(word)) {
+              alert('금칙어가 포함되어 있습니다. 검색할 수 없습니다.');
+              break;
+            }
+          }
+
+        });
+
+
+        // 3.
+        $("#moreBtn").on('click', function() {
+
+          // div 가 보여지는 상태면 숨기고, 숨겨진 상태면 보여지기
+          if ($("#moreDiv").is(':visible')) {
+            $("#moreBtn").text('펼치기');
+            $("#moreDiv").hide();
+          }
+          else {
+            $("#moreBtn").text('닫기');
+            $("#moreDiv").show();
+          }
+        });
+
+        // 4. 생략
+
+        // 5.
+        var imageList = ["https://cdn.pixabay.com/photo/2014/08/27/18/24/girl-429380__340.jpg",
+        "https://cdn.pixabay.com/photo/2022/01/02/19/43/train-6910973__340.jpg",
+        "https://cdn.pixabay.com/photo/2016/03/23/15/00/ice-cream-1274894__340.jpg",
+        "https://cdn.pixabay.com/photo/2018/07/14/15/27/cafe-3537801__340.jpg",
+        "https://cdn.pixabay.com/photo/2015/06/01/05/58/shells-792912__340.jpg"]
+        
+        let i = 0;
+        // 다음
+        $("#nextBtn").on('click', function() {
+          i++;
+          if (i == imageList.length) {
+            i = 0;
+          }
+          // 이미지 교체
+          $("#image").attr('src', imageList[i]);
+
+        });
+
+        // 이전
+        $("#prevBtn").on('click', function() {
+          i--;
+          if (i == -1) {
+            i = imageList.length - 1;
+          }
+          $("#image").attr('src',imageList[i]);
+        })
+
+      });
+
+    </script>
+  </body>
+</html>
