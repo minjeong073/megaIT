@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>change event</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+  
+    <!-- 라디오 버튼 -->
+    <h3>좋아하는 동물을 고르세요</h3>
+    <label>개 <input type="radio" name="animal" value="개"></label>
+    <label>고양이 <input type="radio" name="animal" value="고양이" id="catRadio"></label>
+    <label>사자 <input type="radio" name="animal" value="사자"></label>
+    <br>
+    <button type="button" id="catCheckBtn">고양이 선택</button>
+    <button type="button" id="cancelBtn">선택 해제</button>
+
+
+
+    <!-- 셀렉트 박스 -->
+
+    <h3>주소 이동</h3>
+
+    <select name="" id="siteSelect">
+      <option value="naver">네이버</option>
+      <option value="daum">다음</option>
+      <option value="google">구글</option>
+    </select>
+
+
+    <script>
+      $(document).ready(function() {
+
+        // 1 라디오 버튼이 선택되었을 때 무엇을 선택했는지 확인
+  
+        // $("input[name='animal']") input tag 중에 name 속성의 이름이 animal 인 객체
+        // $("input[name='animal']:checked").val() : 라디오 버튼 중 check 된 것의 value 가져오기
+        
+        $("input[name='animal']").on('change', function() {
+          // let animal = $("input[name='animal']:checked").val();
+          
+          // 다른 표현 방법
+          // 이벤트가 발생한 태그 객체(this 딱 하나) 가져오기
+          let animal = $(this).val();
+          // alert(animal);
+  
+        });
+
+
+        // 2 고양이 라디오 버튼 선택
+
+        $("#catCheckBtn").on('click', function() {
+          // checked 속성 - true, false
+          // $("#catRadio").attr('checked', true);
+
+          // BUT 동적인 상황(사용자가 먼저 선택한 후 버튼 누를 경우)에서는 attr 쓰면 안됨!
+          $("#catRadio").prop('checked', true);
+
+
+        });
+
+
+        // 3 모든 라디오 버튼 선택 취소
+
+        $("#cancelBtn").on('click', function() {
+          $("input[name='animal']").prop('checked', false);
+
+
+        });
+
+
+        // 4 
+        $("#siteSelect").on('change', function() {
+          // 선택된 값 가져오기
+          // option:
+          // let site = $("#siteSelect option:selected").val();
+
+          // 다른 표현 방법
+          // let site = $("#siteSelect").val();
+          // option 에 value 없는 경우 tag 이름 출력
+          // value 있는 경우 value 값 출력
+
+          // 이벤트가 걸린 대상 : option tag = this 로 지정됨
+          let site = $(this).val();
+
+          // 선택된 주소로 이동하기
+          if (site == 'naver') {
+            location.href = 'https://naver.com';
+          } else if (site == 'daum') {
+            location.href = 'https://daum.net';
+          } else if (site == 'google') {
+            location.href = 'https://google.com';
+          }
+
+          // 사용자 입력값 받기
+        });
+
+
+      });
+
+    </script>
+
+  </body>
+</html>
