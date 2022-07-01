@@ -85,13 +85,24 @@
           }
         });
 
+        // +
+        /*
+        +
+        1. label 있는 값을 text 함수를 통해 바꾸기
+        2. label input을 하나로 묶어서 둘 중 하나만 보이게 하기
+        */
+
 
         // 3
         $("input[name='check']").on('change', function() {
           let check = $("input[name='check']:checked").val();
           
           // TODO : 전체 선택 후 개별 해제할 경우 전체 선택 체크박스 해제
-          
+          if ($("input[name='check']:checked").length == 3) {
+            $("#checkAll").prop('checked', true);
+          } else {
+            $("#checkAll").prop('checked', false);
+          }
 
         });
 
@@ -123,8 +134,8 @@
 
         });
 
-      });
 
+      });
 
 
     </script>
