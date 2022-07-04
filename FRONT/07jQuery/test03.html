@@ -56,12 +56,21 @@
 
         $.datepicker.setDefaults({
           dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-          currentText: '오늘'
+          currentText: '오늘',
+          dateFormat:'yy-mm-dd'
         });
 
         $("#startDate").datepicker({
-          dateFormat:'yy-mm-dd',
-          showButtonPanel:true
+          showButtonPanel:true,
+          minDate:0,
+          onSelect:function(dateText) {
+            // 날짜가 선택되면 endDate 의 minDate 값을 새로 setting
+            // 이미 만들어진것 수정하려면
+            // 1. ooption : option 요소
+            // 2. minDate : 수정할 변수
+            // 3. dateText : 바꿀 변수
+            $("#endDate").datepicker('option', 'minDate', dateText);
+          }
         });
 
         $("#startDate").datepicker('option', 'minDate', '0');
@@ -69,12 +78,8 @@
           $("#endDate").datepicker('option', 'minDate', selectedDate);
         });
 
-        $("#endDate").datepicker({
-          dateFormat:'yy-mm-dd'
-        });
-
         $("#endDate").datepicker('option', 'onClose', function(selectedDate) {
-          $("#startDate").datepicker('option', 'maxDate', selectedDate)
+          $("#startDate").datepicker('option', 'maxDate', selectedDate);
         });
 
 
