@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <title>행사 일정 입력</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>  
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+    <style>
+      .form-group {
+        font-weight: bold;
+      }
+      .form-control {
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+
+      <h1 class="font-weight-bold">행사 일정 입력</h1>
+    </header>
+    
+    <section class="col-6">
+      <div class="form-group">
+        <label class="control-label">행사 제목</label>
+        <input type="text" class="w-100 form-control">
+      </div>
+      <br>
+
+      <div class="d-flex">
+        <div class="form-group d-flex">
+          <label class="control-label">시작일</label>
+          <input type="text" id="startDate" class="form-control w-75">
+        </div>
+        <div class="form-group d-flex ">
+          <label class="control-label">종료일</label>
+          <input type="text" id="endDate" class="form-control w-75">
+        </div>
+      </div>
+  
+      <button type="button" class="btn btn-block w-100 bg-info text-white mt-2">저장</button>
+    </section>
+
+
+    <script>
+      $(document).ready(function() {
+
+        $.datepicker.setDefaults({
+          dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+          currentText: '오늘'
+        });
+
+        $("#startDate").datepicker({
+          dateFormat:'yy-mm-dd',
+          showButtonPanel:true
+        });
+
+        $("#startDate").datepicker('option', 'minDate', '0');
+        $("#startDate").datepicker('option', 'onClose', function(selectedDate) {
+          $("#endDate").datepicker('option', 'minDate', selectedDate);
+        });
+
+        $("#endDate").datepicker({
+          dateFormat:'yy-mm-dd'
+        });
+
+        $("#endDate").datepicker('option', 'onClose', function(selectedDate) {
+          $("#startDate").datepicker('option', 'maxDate', selectedDate)
+        });
+
+
+      });
+    </script>
+
+  </body>
+</html>
