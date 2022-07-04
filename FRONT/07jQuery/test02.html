@@ -36,24 +36,44 @@
 
     <h3>2. 입력 바꾸기</h3>
 
-    <label>학생 <input type="radio" name="job" value="student"></label>
+    <!-- 이 방법이 input 까지 한 묶음으로 처리할 수 있기 때문에 더 나음 -->
+   <label>학생 <input type="radio" name="job" value="student"></label>
+   <label>직장인 <input type="radio" name="job" value="worker"></label>
+   <div id="schoolNameInput" class="name-div">
+    <label>학교명</label> <input type="text">
+  </div>
+   <div id="officeNameInput" class="name-div">
+    <label>회사명</label> <input type="text">
+  </div>
+
+<!--  ++ 다른 방법
+         nameLabel 을 하나로 두고 라디오 버튼 선택 값에 따라
+         학교명 회사명 바꾸기 -->
+    <!-- <label>학생 <input type="radio" name="job" value="student"></label>
     <label>직장인 <input type="radio" name="job" value="worker"></label>
-    <div id="schoolNameInput" class="name-div">학교명 <input type="text"></div>
-    <div id="officeNameInput" class="name-div">회사명 <input type="text"></div>
+    <br>
+    <label id="nameLabel" class="name-div">학교명</label>
+    <input id="nameInput" type="text" class="name-div"> -->
 
     <hr>
 
     <h3>3. 전체 선택</h3>
 
     <div>
-      <label>전체 선택 <input type="checkbox" value="checkAll" name="check" id="checkAll"></label>
+      <label>전체 선택 <input type="checkbox" value="checkAll"  id="checkAll"></label>
     </div>
       
-    <label>
-      개인정보 활용 동의 <input type="checkbox" value="checkPrivacy" name="check" id="checkPrivacy"> 
-      서비스 이용 동의 <input type="checkbox" value="checkService" name="check" id="checkService">
-      마케팅 활용 동의 <input type="checkbox" value="checkMarketing" name="check" id="checkMarketing"> 
-    </label>
+    <div>
+      <label>개인정보 활용 동의
+        <input type="checkbox" value="checkPrivacy" name="check" id="checkPrivacy">
+      </label>
+      <label>서비스 이용 동의
+        <input type="checkbox" value="checkService" name="check" id="checkService">
+      </label>
+      <label>마케팅 활용 동의
+        <input type="checkbox" value="checkMarketing" name="check" id="checkMarketing">
+      </label>
+    </div>
 
     <hr>
 
@@ -65,14 +85,14 @@
 
       $(document).ready(function() {
         
-        // 1
+//        // 1
         $("#colorSelect").on('change', function() {
           let color = $(this).val();
           $("#colorBox").css('background-color', color);
         });
 
 
-        //2
+//        //2
         $("input[name='job']").on('change', function() {
           let job = $(this).val();
 
@@ -85,58 +105,73 @@
           }
         });
 
-        // +
-        /*
-        +
-        1. label 있는 값을 text 함수를 통해 바꾸기
-        2. label input을 하나로 묶어서 둘 중 하나만 보이게 하기
-        */
+        // + 다른 방법) nameLabel 하나로 두고 학교명, 회사명 바꾸기
+
+        $("input[name='job']").on('change', function () {
+          let job = $(this).val();
+
+          $("#nameLabel").show();
+          $("#nameInput").show();
+
+          if (job == 'worker') {
+            $("#nameLabel").text('회사명');
+          }
+        });
 
 
-        // 3
+//        // 3
         $("input[name='check']").on('change', function() {
           let check = $("input[name='check']:checked").val();
           
-          // TODO : 전체 선택 후 개별 해제할 경우 전체 선택 체크박스 해제
+          // 전체 선택 후 개별 해제할 경우 전체 선택 체크박스 false
+          // + 개별 선택으로 모두 선택할 경우 전체 선택 체크박스 true
           if ($("input[name='check']:checked").length == 3) {
             $("#checkAll").prop('checked', true);
           } else {
             $("#checkAll").prop('checked', false);
           }
-
         });
 
         $("#checkAll").on('change', function() {
+          
+          // if ($("#checkAll").is(':checked')) {
+          //   $("input[name='check']").prop('checked', true);
+          // } 
+          // else {
+          //   $("input[name='check']").prop('checked', false);
+          // }
 
-          if ($("#checkAll").is(':checked')) {
-            $("input[name='check']").prop('checked', true);
-          } 
-          else {
-            $("input[name='check']").prop('checked', false);
-          }
+          // 한줄로 정리
+          $("input[name='check']").prop('checked', $(this).is(':checked'));
         });
 
 
-        // 4
-        $("#lengthLimitText").keyup(function() {
-          // input 값 가져오기
-          let input = $(this).val();
-          // alert(input)
+//        // 4
+        // keyup : 키를 눌렀다 떼는 순간 -> 화살표 누를때도
+        // input : 하나씩 입력되는 순간
 
-          // 글자 수 alert
-          if (input.length > 5) {
-            alert("다섯자를 초과하여 입력할 수 없습니다")
-            // 5 글자 넘어가는 부분 제거
-            // = 값 변경하기
-            $(this).val($(this).val().substring(0,5));
+      //   $("#lengthLimitText").keyup(function() {
+      //     // input 값 가져오기
+      //     let input = $(this).val();
+
+      //     if (input.length > 5) {
+      //       alert("다섯자를 초과하여 입력할 수 없습니다")
+      //       // 5 글자 넘어가는 부분 제거
+      //       // = 값 변경하기
+      //       $(this).val($(this).val().substring(0,5));
+      //     }
+      //   });
+
+      // 다른 방법
+        $("#lengthLimitText").on('input', function() {
+          let inputText = $(this).val();
+
+          if (inputText.length > 5) {
+            alert('5자 넘어감');
+            $(this).val(inputText.slice(0,5));
           }
-
-
         });
-
-
       });
-
 
     </script>
     
