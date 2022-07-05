@@ -1,0 +1,37 @@
+#wrap {
+  width: 1200px;
+  margin: auto;
+}
+
+header {
+  height: 100px;
+}
+
+section {
+  height: 600px;
+}
+
+.display-hide {
+  display: none;
+}
+
+.join-box  .label-name {
+  font-weight: bold;
+}
+
+.join-box #idLength {
+  font-size: small;
+  font-weight: bold;
+}
+
+.join-box #inputEmail {
+  width: 150px;
+}
+
+.join-box .email-select {
+  width: 150px;
+}
+
+footer {
+  height: 100px;
+}
