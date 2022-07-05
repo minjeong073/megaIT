@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>회원가입 화면 만들기</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>  
+    
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+<!-- 
+ V 1 레이아웃 
+ V 2 가입하기 버튼 -> input 내용 alert
+ V 3 유효성 검사 (가입하기 버튼 -> 비어있는 경우 alert)
+ V 4 비밀번호 확인 일치하지 않을 경우 alert
+ V 5 이메일 도메인 셀렉트 박스 (직접 입력 -> 도메인 입력 input 창)
+  6 입력 동시 처리 (ID 4글자 이하일 경우 -> 가입하기 버튼 누르지 않아도)
+ -->
+
+  <body>
+  
+    <div id="wrap">
+      <header class="d-flex align-items-center">
+        <h1 class="pl-4 text-danger">111번가</h1>
+      </header>
+
+      <section class="d-flex justify-content-center">
+        <div class="join-box col-4">
+          <div class="mt-3 mb-3">
+            <div><h2 class="font-weight-bold">가입 정보 입력</h2></div>
+            <div class="text-secondary">11번가의 다양한 혜택을 누려보세요!!</div>
+          </div>
+<!-- id -->        
+          <div class="id form-group">
+            <label class="label-name">아이디</label>
+            <input type="text" id="ID" class="form-control">
+            <div id="idLength" class="display-hide text-info mt-1">아이디를 4자 이상 입력하세요.</div>
+          </div>
+<!-- pw -->          
+          <div class="pw form-group">
+            <label class="label-name">비밀번호</label>
+            <input type="password" id="pw" class="form-control">
+          </div>
+<!-- pw2 -->          
+          <div class="pw2 form-group">
+            <label class="label-name">비밀번호 확인</label>
+            <input type="password" id="pw2" class="form-control">
+            <div id="uncorrectPw" class="display-hide text-info mt-1">비밀번호가 일치하지 않습니다.</div>
+          </div>
+<!-- name -->          
+          <div class="name form-group">
+            <label class="label-name">이름</label>
+            <input type="text" id="name" class="form-control">
+          </div>
+<!-- email -->          
+          <div class="email form-group">
+            <label class="label-name">이메일</label>
+            <div class="d-flex justify-content-between">
+
+              <input type="text" id="email" class="form-control w-50">
+              @
+<!-- select -->              
+              <select id="selectEmail" class="email-select form-control">
+                <option value="naver">naver.com</option>
+                <option value="google">google.com</option>
+                <option value="kakao">kakao.com</option>
+                <option value="직접입력">직접입력</option>
+              </select>
+<!-- input (hide) -->              
+              <input type="text" id="inputEmail" class="display-hide form-control">
+            </div>
+          </div>
+<!-- btn -->          
+          <button type="button" id="joinBtn" class="btn w-100 bg-danger text-white">가입하기</button>
+        </div>
+      </section>
+
+      <footer class="text-secondary d-flex justify-content-center align-items-end">
+        Copyright © minjeong 111st 2022. All Rights Reserved.
+      </footer>
+    </div>
+
+
+    <script>
+
+      $(document).ready(function() {
+        
+// 가입하기 버튼 -> input 내용 alert
+        $("#joinBtn").on('click', function() {
+          let input = {};
+          input['아이디'] = $("#ID").val();
+          input['비밀번호'] = $("#pw").val();
+          input['비밀번호 확인'] = $("#pw2").val();
+          input['이름'] = $("#name").val();
+          input['이메일'] = $("#email").val();
+          input['도메인'] = $("#selectEmail option:selected").text();
+          
+          for (let key in input) {
+            if (input[key] == '') {
+              if (key === '아이디' || key === '비밀번호') {
+                alert(key + '를 입력하세요');  
+                return;
+              } else {
+                alert(key + '을 입력하세요');
+                return;
+              }
+            }         
+          }
+// 유효성 검사 (가입하기 버튼 -> 비어있는 경우 alert)
+          
+          // 도메인 직접 입력하는 경우
+          let selectEmail;
+          if ($("#inputEmail").is(':visible')) {
+            selectEmail = $(this).text();
+          } else {
+            selectEmail = $("#selectEmail option:selected").text();
+          }
+
+          if (empty == 0) { // 비어있는 것이 없으면
+            if ($("#idLength").is(':visible')) {
+              alert($("#idLength").text());
+              return;
+            } else if (input['비밀번호'] != input['비밀번호 확인']) {
+              alert($("#uncorrectPw").text());
+              return;
+            }
+          }
+          alert('아이디 : ' + input['아이디']
+            + '\n이름 : ' + input['이름']
+            + '\n이메일 : ' + input['이메일'] + '@' + selectEmail
+            + '\n가입이 완료 되었습니다.'
+          );
+
+        });
+
+// 비밀번호 확인 일치하지 않을 경우 alert
+        $("#pw2").on('change', function() {
+
+          if ($("#pw").val() !== $("#pw2").val()) {
+            $("#uncorrectPw").show();
+          } else {
+            $("#uncorrectPw").hide();
+          }
+        });
+
+// 이메일 도메인 셀렉트 박스 (직접 입력 -> 도메인 입력 input 창)        
+        $("#selectEmail").on('change', function() {
+          
+          if ($(this).val() === '직접입력') {
+            $("#selectEmail").hide();
+            $("#inputEmail").show();
+            
+            $("#inputEmail").on('change', function() {
+              $("#selectEmail option:selected").text($(this).text());
+            });
+            // $("#selectEmail option:selected")
+            // .replaceWith('<option value');
+
+            // $("#selectEmail option:selected").text($("#inputEmail").text());
+            
+          }
+        });
+
+// 입력 동시 처리 
+// (ID 4글자 이하일 경우 -> 가입하기 버튼 누르지 않아도)        
+
+        $("#ID").on('input', function() {
+          
+          let inputId = $(this).val();
+
+          if (inputId.length < 4) {
+            $("#idLength").show();
+          } else {
+            $("#idLength").hide();
+          }
+
+        });
+
+      });
+
+    </script>
+
+    
+  </body>
+</html>
