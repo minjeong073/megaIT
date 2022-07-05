@@ -18,9 +18,9 @@
  V 1 레이아웃 
  V 2 가입하기 버튼 -> input 내용 alert
  V 3 유효성 검사 (가입하기 버튼 -> 비어있는 경우 alert)
- V 4 비밀번호 확인 일치하지 않을 경우 alert
+ V 4 비밀번호 확인 일치하지 않을 경우
  V 5 이메일 도메인 셀렉트 박스 (직접 입력 -> 도메인 입력 input 창)
-  6 입력 동시 처리 (ID 4글자 이하일 경우 -> 가입하기 버튼 누르지 않아도)
+ V 6 입력 동시 처리 (ID 4글자 이하일 경우 -> 가입하기 버튼 누르지 않아도)
  -->
 
   <body>
@@ -51,7 +51,7 @@
           <div class="pw2 form-group">
             <label class="label-name">비밀번호 확인</label>
             <input type="password" id="pw2" class="form-control">
-            <div id="uncorrectPw" class="display-hide text-info mt-1">비밀번호가 일치하지 않습니다.</div>
+            <div id="incorrectPw" class="display-hide text-info mt-1">비밀번호가 일치하지 않습니다.</div>
           </div>
 <!-- name -->          
           <div class="name form-group">
@@ -93,59 +93,64 @@
         
 // 가입하기 버튼 -> input 내용 alert
         $("#joinBtn").on('click', function() {
+
+          // input dictionary 에 저장
           let input = {};
           input['아이디'] = $("#ID").val();
           input['비밀번호'] = $("#pw").val();
           input['비밀번호 확인'] = $("#pw2").val();
           input['이름'] = $("#name").val();
           input['이메일'] = $("#email").val();
-          input['도메인'] = $("#selectEmail option:selected").text();
-          
-          for (let key in input) {
-            if (input[key] == '') {
-              if (key === '아이디' || key === '비밀번호') {
-                alert(key + '를 입력하세요');  
-                return;
-              } else {
-                alert(key + '을 입력하세요');
-                return;
-              }
-            }         
-          }
-// 유효성 검사 (가입하기 버튼 -> 비어있는 경우 alert)
-          
+
           // 도메인 직접 입력하는 경우
           let selectEmail;
           if ($("#inputEmail").is(':visible')) {
-            selectEmail = $(this).text();
+            selectEmail = $("#inputEmail").val();
           } else {
             selectEmail = $("#selectEmail option:selected").text();
           }
+          input['도메인'] = selectEmail;
 
-          if (empty == 0) { // 비어있는 것이 없으면
-            if ($("#idLength").is(':visible')) {
-              alert($("#idLength").text());
-              return;
-            } else if (input['비밀번호'] != input['비밀번호 확인']) {
-              alert($("#uncorrectPw").text());
-              return;
+// 유효성 검사
+          // 비어있는 경우
+          for (let key in input) {
+            if (input[key] == '') {
+              if (key === '아이디' || key === '비밀번호') {
+                alert(key + '를 입력하세요');
+                return;
+              }
+              else {
+                alert(key + '을 입력하세요');
+                return;
+              }
             }
           }
+          // ID 4글자 이하일 경우
+          if ($("#idLength").is(':visible')) {
+            alert($("#idLength").text());
+            return;
+          }
+          // 비밀번호 일치하지 않을 경우
+          if ($("#incorrectPw").is(':visible')) {
+            alert($("#incorrectPw").text());
+            return;
+          }
+
           alert('아이디 : ' + input['아이디']
             + '\n이름 : ' + input['이름']
-            + '\n이메일 : ' + input['이메일'] + '@' + selectEmail
+            + '\n이메일 : ' + input['이메일'] + '@' + input['도메인']
             + '\n가입이 완료 되었습니다.'
           );
 
         });
 
-// 비밀번호 확인 일치하지 않을 경우 alert
+// 비밀번호 확인 일치하지 않을 경우
         $("#pw2").on('change', function() {
 
           if ($("#pw").val() !== $("#pw2").val()) {
-            $("#uncorrectPw").show();
+            $("#incorrectPw").show();
           } else {
-            $("#uncorrectPw").hide();
+            $("#incorrectPw").hide();
           }
         });
 
@@ -155,15 +160,6 @@
           if ($(this).val() === '직접입력') {
             $("#selectEmail").hide();
             $("#inputEmail").show();
-            
-            $("#inputEmail").on('change', function() {
-              $("#selectEmail option:selected").text($(this).text());
-            });
-            // $("#selectEmail option:selected")
-            // .replaceWith('<option value');
-
-            // $("#selectEmail option:selected").text($("#inputEmail").text());
-            
           }
         });
 
@@ -171,7 +167,7 @@
 // (ID 4글자 이하일 경우 -> 가입하기 버튼 누르지 않아도)        
 
         $("#ID").on('input', function() {
-          
+
           let inputId = $(this).val();
 
           if (inputId.length < 4) {
@@ -179,7 +175,6 @@
           } else {
             $("#idLength").hide();
           }
-
         });
 
       });
