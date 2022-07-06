@@ -40,7 +40,7 @@
           <div class="id form-group">
             <label class="label-name">아이디</label>
             <input type="text" id="ID" class="form-control">
-            <div id="idLength" class="display-hide text-info mt-1">아이디를 4자 이상 입력하세요.</div>
+            <div id="idLength" class="d-none text-info mt-1"><small>아이디를 4자 이상 입력하세요.</small></div>
           </div>
 <!-- pw -->          
           <div class="pw form-group">
@@ -51,7 +51,7 @@
           <div class="pw2 form-group">
             <label class="label-name">비밀번호 확인</label>
             <input type="password" id="pw2" class="form-control">
-            <div id="incorrectPw" class="display-hide text-info mt-1">비밀번호가 일치하지 않습니다.</div>
+            <div id="incorrectPw" class="d-none text-info mt-1"><small>비밀번호가 일치하지 않습니다.</small></div>
           </div>
 <!-- name -->          
           <div class="name form-group">
@@ -70,10 +70,10 @@
                 <option value="naver">naver.com</option>
                 <option value="google">google.com</option>
                 <option value="kakao">kakao.com</option>
-                <option value="직접입력">직접입력</option>
+                <option value="custom">직접입력</option>
               </select>
 <!-- input (hide) -->              
-              <input type="text" id="inputEmail" class="display-hide form-control">
+              <input type="text" id="inputEmail" class="d-none form-control">
             </div>
           </div>
 <!-- btn -->          
@@ -147,19 +147,41 @@
 // 비밀번호 확인 일치하지 않을 경우
         $("#pw2").on('change', function() {
 
+// + 추가
           if ($("#pw").val() !== $("#pw2").val()) {
-            $("#incorrectPw").show();
+            // $("#incorrectPw").show();
+            $("#incorrectPw").removeClass('d-none');
           } else {
-            $("#incorrectPw").hide();
+            // $("#incorrectPw").hide();
+            $("#incorrectPw").addClass('d-none');
+          }
+        });
+        
+// 수정 : 비밀번호 확인 필드 먼저 고친 후 비밀번호 필드 수정할 경우도 
+//        다시 일치하는지 확인
+        $("#pw").on('change', function() {
+
+// + 추가
+          if ($("#pw").val() !== $("#pw2").val()) {
+            // $("#incorrectPw").show();
+            $("#incorrectPw").removeClass('d-none');
+          } else {
+            // $("#incorrectPw").hide();
+            $("#incorrectPw").addClass('d-none');
           }
         });
 
 // 이메일 도메인 셀렉트 박스 (직접 입력 -> 도메인 입력 input 창)        
         $("#selectEmail").on('change', function() {
           
-          if ($(this).val() === '직접입력') {
-            $("#selectEmail").hide();
-            $("#inputEmail").show();
+          if ($(this).val() === 'custom') {
+            // $("#selectEmail").hide();
+            // $("#inputEmail").show();
+
+// + 추가   // + display-hide 를 css로 추가하지 않고, bootstrap 에서 d-none 으로 간단히 설정
+            // -> class의 d-none 제거하면 보여짐
+            $(this).addClass('d-none');
+            $("#inputEmail").removeClass('d-none');
           }
         });
 
@@ -170,10 +192,13 @@
 
           let inputId = $(this).val();
 
-          if (inputId.length < 4) {
-            $("#idLength").show();
+// + 추가          
+          if (inputId.length < 4 && inputId != '') {
+            // $("#idLength").show();
+            $("#idLength").removeClass('d-none');
           } else {
-            $("#idLength").hide();
+            // $("#idLength").hide();
+            $("#idLength").addClass('d-none');
           }
         });
 
