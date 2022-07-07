@@ -129,7 +129,7 @@
     <footer>
       <div class="text-secondary pt-3 pl-4">
         제주특별자치도 제주시 애월읍<br>
-        사업자등록번호 111-22-33333/농어촌민박사업자지정/대표:김동욱 <br>
+        사업자등록번호 111-22-33333/농어촌민박사업자지정/대표:김통목 <br>
         Copyright 2025 tongnamu. All Rights Reserved.
       </div>
     </footer>
@@ -209,20 +209,22 @@
       });
 
       // 이미지 3초마다 자동 변경
-      var count = 1;
+      let images = ['test06_banner1.jpg','test06_banner2.jpg','test06_banner3.jpg','test06_banner4.jpg'];
+      var i = 0;
       setInterval(function () {
-        count++;
-        if (count > 4) {
-          count = 1;
+        i++;
+        if (i > 3) {
+          i = 0;
         }
-
-        $("#mainImg").attr('src', 'test06_banner' + count + '.jpg');
+        // $("#mainImg").attr('src', 'test06_banner' + i + '.jpg');
+        $("#mainImg").attr('src', images[i]);
       },3000);
 
     });
   </script>
 </body>
 </html>
+
 <!--
 <section class="contents">
   <article class="main-banner">
