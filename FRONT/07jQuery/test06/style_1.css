@@ -1,0 +1,43 @@
+#wrap {
+  width: 1200px;
+  margin: auto;
+}
+
+header {
+  height: 100px;
+  color: rgb(80, 47, 47);
+}
+
+nav {
+  height: 40px;
+  background-color: peru;
+}
+
+.nav .nav-item :hover {
+  background-color: rgb(60, 99, 56);
+  /* background: linear-gradient(to right, rgb(60,99,56), peru); */
+}
+
+section > .main-contents {
+  height: 300px;
+  background-color: rgb(153, 75, 31);
+}
+
+.main-contents > .reservation {
+  background-color: chocolate;
+}
+
+footer {
+  height: 100px;
+}
+
+
+.main-info {
+  height: 300px;
+  background-color: rgb(153, 75, 31);
+}
+
+.reservation-confirm {
+  height: 300px;
+  background-color: peru;
+}
