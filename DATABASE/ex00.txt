@@ -57,7 +57,7 @@ RDB에서 기본키 필수
 일반적으로 AUTO_INCREMENT 통해 자동 저장
 
 <NOT NULL>
-null 입력되지 않아야
+필수 항목 -> null 일 수 없음
 
 <DEFAULT>
 입력하지 않으면 기본 default 로 설정하겠다
@@ -94,3 +94,46 @@ ADD, MODIFY, CHANGE COLUMN
 #, --, /* */ 주석
 `` (backtick) 으로 
 
+
+0708
+
+QUERY
+
+1 INSERT
+
+INSERT INTO 'user'
+(`name`, `yyyymmdd`, `cratedAt`, `updatedAt`)
+VALUE
+('값', '생년월일', now(), now());
+
+column - id : AUTO_INCREMENT 직접 값 넣지 않아도 자동 입력됨
+       - 값은 ' 따옴표로 (숫자도 가능은 함)
+now() 함수 : 현재 시간 넣어줌
+
+
+2 SELECT
+SELECT `컬럼 리스트`
+FROM `user`
+WHERE `name` = '김바다' AND `hobby` = '사냥하기';
+
+`column list` 에 * 넣을 경우 = 모든 column = 전체 테이블 조회
+FROM : 테이블 이름
+WHERE : 조건문
+-> `name` 이 '김바다' 인 것 중 `hobby` 가 '사냥하기' 인 값들 조회
+
+
+3. UPDATE
+UPDATE `user`
+SET `email` = 'aaa@gmail.com'
+WHERE id=4;
+
+WHERE 꼭 붙여야함
+
+
+4. DELETE
+DELETE FROM `user` WHERE id=1;
+
+WHERE 꼭 붙여야함
+
+SELECT * FROM `user` WHERE id=1;
+로 먼저 삭제할 값 확인한 후 맞을 경우 DELETE 하기
