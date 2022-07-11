@@ -31,7 +31,7 @@ SELECT `menu`, `review`, `point` FROM `review` WHERE `storeName` = '교촌치킨
 SELECT count(*) FROM `review` WHERE `userName` = '전지현' AND `storeName` = 'BHC';
 
 -- 4. 날짜 조건
-SELECT * FROM `review` WHERE `userName` = '강동원' AND `createdAt` > '2025-03-11';
+SELECT * FROM `review` WHERE `userName` = '강동원' AND `createdAt` >= '2025-03-11 00:00:00';
 
 -- 5. 복합 조건
 SELECT * FROM `review` WHERE `userName` = '이정재' AND (`review` IS NOT NULL OR `point` >= 4.5);
