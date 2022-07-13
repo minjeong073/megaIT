@@ -2,7 +2,7 @@
 
 -- 1. 테이블 생성
 CREATE TABLE `weatherhistory` (
-	`id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `date` DATE NOT NULL,
     `weather` varchar(4) NOT NULL,
     `temperatures` decimal(3,1) NOT NULL,
@@ -37,12 +37,20 @@ VALUES
 
 SELECT * FROM `weatherhistory`;
 
+TRUNCATE TABLE `weatherhistory`;
+
 -- 3. 가장 높은 기온
 SELECT `date`, `weather`, `temperatures` FROM `weatherhistory`
 ORDER BY `temperatures` DESC LIMIT 1;
 
 -- 4. 날씨 카운트
+SELECT `weather`, count(*) AS `count` FROM `weatherhistory`
+GROUP BY `weather` ORDER BY `count` DESC;
 
 -- 5. 미세먼지와 강수량
+SELECT `microDust`, TRUNCATE(avg(`precipitation`), 1) AS `precipitation` FROM `weatherhistory`
+GROUP BY `microDust` HAVING avg(`precipitation`) != 0;
 
 -- 6. 미세먼지와 풍속
+SELECT  `microDust`, TRUNCATE(avg(`windSpeed`),2) AS `windSpeed` FROM `weatherhistory`
+GROUP BY `microDust` HAVING avg(`windSpeed`) >= 4.0 ORDER BY `windSpeed` DESC;
