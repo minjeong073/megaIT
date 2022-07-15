@@ -100,12 +100,22 @@ GROUP BY A.office
 ORDER BY `count` DESC;
 
 
+-- + count(*) 가 아닌 count( `col` ) 로 할 경우 -> 결과 값이 달라짐 
+SELECT A.office, count(B.rentPrice) AS `count`
+FROM `realtor` AS `A`
+JOIN `real_estate` AS `B`
+ON A.id = B.realtorId
+GROUP BY A.office
+ORDER BY `count` DESC;
+-- -> count( `col` ) 일 때 해당 col의 데이터 값이 null 인 경우는 제외하고 count
+
+
 -- 5. 매물 확인
 SELECT A.office, A.phoneNumber, B.address, B.price, B.area
 FROM `realtor` AS `A`
 JOIN `real_estate` AS `B`
 ON A.id = B.realtorId
-WHERE A.office = '대박공인중개사' AND (B.type IN ('매매' , '전세')) AND B.area >= 100
+WHERE A.office = '대박공인중개사' AND B.type IN ('매매' , '전세') AND B.area >= 100
 ORDER BY B.price;
 
 
