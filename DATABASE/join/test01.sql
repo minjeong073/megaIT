@@ -109,6 +109,9 @@ FROM `store` AS `A`
 JOIN `new_review` AS `B`
 ON A.id = B.storeId
 GROUP BY A.name
+-- group by : 인덱스 걸려있는 것 쓰는 것이 성능 좋음
+-- -> GROUP BY A.id
+-- GROUP BY A.name, A.phoneNumber 로 보여주는 것도 좋음
 ORDER BY `averagePoint` DESC
 LIMIT 5;
 
