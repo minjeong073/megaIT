@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/Java/Java.iml" filepath="$PROJECT_DIR$/Java/Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MegaIT.iml" filepath="$PROJECT_DIR$/.idea/MegaIT.iml" />
       <module fileurl="file://$PROJECT_DIR$/Servlet/Servlet.iml" filepath="$PROJECT_DIR$/Servlet/Servlet.iml" />
-      <module fileurl="file://$PROJECT_DIR$/megaServlet/megaServlet.iml" filepath="$PROJECT_DIR$/megaServlet/megaServlet.iml" />
     </modules>
   </component>
 </project>

@@ -9,9 +9,8 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/Servlet/pom.xml" />
         <option value="$PROJECT_DIR$/megaServlet2/pom.xml" />
-        <option value="$PROJECT_DIR$/megaServlet/pom.xml" />
+        <option value="$PROJECT_DIR$/Servlet/pom.xml" />
       </list>
     </option>
   </component>
