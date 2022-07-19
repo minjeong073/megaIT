@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Servlet" />
+        <module name="megaServlet" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="megaServlet" target="1.8" />
       <module name="Servlet" target="1.8" />
       <module name="Servlet2" target="1.8" />
     </bytecodeTargetLevel>
