@@ -1,0 +1,5 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¦âÿë
+È
+java:S1598"¬This file "Temperature.java" should be located in "academy\java2\Abstract\test02" directory, not in "C:\Users\kimmj\Desktop\MegaIT\JAVA\src\academy\java2\Abstracts\test02".(Ðæ‹ëÿÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ðæ‹ëÿÿÿÿÿ

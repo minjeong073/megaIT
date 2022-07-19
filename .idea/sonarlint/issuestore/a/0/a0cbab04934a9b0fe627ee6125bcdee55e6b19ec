@@ -1,0 +1,12 @@
+
+—
+java:S11863"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ÿ¸Àÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¯×—µ
+M	java:S106"9Replace this use of System.out or System.err by a logger.(Ÿþ™s
+M	java:S106"9Replace this use of System.out or System.err by a logger.(åŸø5
+S	java:S106("9Replace this use of System.out or System.err by a logger.(ß¥è¶ûÿÿÿÿ
+B
+java:S1172-",Remove this unused method parameter "price".(‚¶³ó
+C	java:S108.")Either remove or fill this block of code.(¬”´Êþÿÿÿÿ
+S	java:S1069"9Replace this use of System.out or System.err by a logger.(à—¿Õüÿÿÿÿ
+M	java:S106B"9Replace this use of System.out or System.err by a logger.(§ø¢6

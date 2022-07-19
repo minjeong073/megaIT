@@ -1,0 +1,45 @@
+
+D
+java:S3740	"/Provide the parametrized type for this generic.(õÃª
+D
+java:S3740	"/Provide the parametrized type for this generic.(õÃª
+J
+java:S3740"/Provide the parametrized type for this generic.(—˜…ûÿÿÿÿ
+J
+java:S3740"/Provide the parametrized type for this generic.(—˜…ûÿÿÿÿ
+J
+java:S37400"/Provide the parametrized type for this generic.(Ğ½¸´ıÿÿÿÿ
+J
+java:S37400"/Provide the parametrized type for this generic.(Ğ½¸´ıÿÿÿÿ
+<
+java:S2129
+"!Remove this "Integer" constructor(Ş·ÁŠûÿÿÿÿ
+J
+java:S1874
+"/Remove this use of "Integer"; it is deprecated.(Ş·ÁŠûÿÿÿÿ
+<
+java:S2129"!Remove this "Integer" constructor(éÉ„øÿÿÿÿ
+J
+java:S1874"/Remove this use of "Integer"; it is deprecated.(éÉ„øÿÿÿÿ
+<
+java:S2129"!Remove this "Integer" constructor(—¤¶àùÿÿÿÿ
+J
+java:S1874"/Remove this use of "Integer"; it is deprecated.(—¤¶àùÿÿÿÿ
+<
+java:S2129"!Remove this "Integer" constructor(¼¶âıÿÿÿÿ
+J
+java:S1874"/Remove this use of "Integer"; it is deprecated.(¼¶âıÿÿÿÿ
+7
+java:S2129"!Remove this "Integer" constructor(ËÍºó
+E
+java:S1874"/Remove this use of "Integer"; it is deprecated.(ËÍºó
+<
+java:S2129"!Remove this "Integer" constructor(ôéæ—şÿÿÿÿ
+J
+java:S1874"/Remove this use of "Integer"; it is deprecated.(ôéæ—şÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(— …
+N	java:S106""9Replace this use of System.out or System.err by a logger.(—¶²
+S	java:S1061"9Replace this use of System.out or System.err by a logger.(æá»òøÿÿÿÿ
+N	java:S1062"9Replace this use of System.out or System.err by a logger.(Ğ™ó
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¬ç÷øÿÿÿÿ

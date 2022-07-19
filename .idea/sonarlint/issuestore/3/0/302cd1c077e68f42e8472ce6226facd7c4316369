@@ -1,0 +1,8 @@
+
+R
+java:S1854"5Remove this useless assignment to local variable "j".(´™ß×8°Èˆ¦0
+<
+java:S1659"Declare "j" on a separate line.(Œöºñ8ÁŠ…¦0
+U	java:S106	"9Replace this use of System.out or System.err by a logger.(ä‘“ì8ÁŠ…¦0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(àê©¼øÿÿÿÿ8°Èˆ¦0
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(«¿êæıÿÿÿÿ

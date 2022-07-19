@@ -1,0 +1,24 @@
+
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Çµí‘
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÆÅ¾­ûÿÿÿÿ
+o
+java:S3012"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(äÞÉ 
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÍèÊØüÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ž·§§þÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(æþË¼øÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+S	java:S106""9Replace this use of System.out or System.err by a logger.(ÀÑûÞþÿÿÿÿ
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(ä³·îøÿÿÿÿ
+S	java:S106?"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+S	java:S106B"9Replace this use of System.out or System.err by a logger.(ôˆ¯Éøÿÿÿÿ
+S	java:S106X"9Replace this use of System.out or System.err by a logger.(ÁŽÛ¬ûÿÿÿÿ
+S	java:S106Y"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+S	java:S106\"9Replace this use of System.out or System.err by a logger.(³åó¯úÿÿÿÿ
+o
+java:S3012b"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(Ó’«­
+t
+java:S3012k"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(Þ»¨›þÿÿÿÿ
+O	java:S106‡"9Replace this use of System.out or System.err by a logger.(µ–¬Æ
+O	java:S106˜"9Replace this use of System.out or System.err by a logger.(µ–¬Æ
+l	java:S127Q"XRefactor the code in order to not assign to this loop counter from within the loop body.(¨…ÄK

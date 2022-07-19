@@ -1,0 +1,8 @@
+
+<
+java:S2129"!Remove this "Integer" constructor(Öóò×úÿÿÿÿ
+J
+java:S1874"/Remove this use of "Integer"; it is deprecated.(Öóò×úÿÿÿÿ
+S	java:S106	"9Replace this use of System.out or System.err by a logger.(ØÎšÑþÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ä±ãæ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(­ÝŒÎ

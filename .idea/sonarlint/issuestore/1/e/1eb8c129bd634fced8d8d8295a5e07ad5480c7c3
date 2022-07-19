@@ -1,0 +1,15 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(”¸¿¡ùÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ã¿¢Ôùÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.( ‘Ú›øÿÿÿÿ
+N	java:S106""9Replace this use of System.out or System.err by a logger.(Å¶áç
+S	java:S106#"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+N	java:S106&"9Replace this use of System.out or System.err by a logger.(¼–ûÛ
+N	java:S106-"9Replace this use of System.out or System.err by a logger.(‚¨Ö§
+S	java:S106."9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+N	java:S1061"9Replace this use of System.out or System.err by a logger.(¯§ïâ
+S	java:S106M"9Replace this use of System.out or System.err by a logger.(ã¿¢Ôùÿÿÿÿ
+H
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ
+l	java:S1276"XRefactor the code in order to not assign to this loop counter from within the loop body.(¨…ÄK

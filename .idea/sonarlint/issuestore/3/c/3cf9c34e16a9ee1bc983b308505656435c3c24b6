@@ -1,0 +1,9 @@
+
+K
+java:S1854
+"5Remove this useless assignment to local variable "c".(©…è©
+X	java:S125"<This block of commented-out lines of code should be removed.(Ï‹Ä±8ãÅ£¦0
+<
+java:S1481
+"&Remove this unused "c" local variable.(©…è©
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(«¿êæýÿÿÿÿ

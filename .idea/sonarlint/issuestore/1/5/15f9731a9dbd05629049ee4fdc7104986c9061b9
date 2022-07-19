@@ -1,0 +1,9 @@
+
+3
+java:S2119"Save and re-use this "Random".(¼ÝÅf
+M	java:S106c"9Replace this use of System.out or System.err by a logger.(©Îþ&
+S	java:S106e"9Replace this use of System.out or System.err by a logger.(®ýáëûÿÿÿÿ
+S	java:S106j"9Replace this use of System.out or System.err by a logger.(Ë¦ëÍùÿÿÿÿ
+N	java:S106m"9Replace this use of System.out or System.err by a logger.(°ÖòÙ
+S	java:S106o"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+l	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(¨…ÄK
