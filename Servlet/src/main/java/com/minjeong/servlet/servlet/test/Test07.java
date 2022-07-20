@@ -23,17 +23,20 @@ public class Test07 extends HttpServlet{
 		String cardName = req.getParameter("cardname");
 		int price = Integer.parseInt(req.getParameter("price"));
 		
+		out.println("<html> <head> <title> 주문하기 </title> </head>");
+
+		// 서울시 아닌 경우
 		if (!address.contains("서울시")) {
-			out.println("배달 불가 지역입니다.");
-		} 
+			out.println("<h1> 배달 불가 지역입니다. </h1>");
+		}
+		// 신한카드 인 경우
 		else if (cardName.equals("신한카드")) {
-			out.println("결제 불가 카드입니다.");
+			out.println("<h1> 결제 불가 카드입니다. </h1>");
 		} 
-		else {			
-			out.println("<html> <head> <title> 주문하기 </title> </head>");
-			out.println("<body> <b>" + address + " 배달 준비중 </b> <hr>");
+		// 정상인 경우
+		else {	
+			out.println("<body> <h1>" + address + " 배달 준비중 </h1> <hr>");
 			out.println("결제금액 : " + price + "원");
-		
 		}
 	
 	}
