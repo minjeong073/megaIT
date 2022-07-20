@@ -21,11 +21,9 @@ public class Test08 extends HttpServlet{
         "집에 가는 길에 동네 맛집 가서 안주 사갑니다.",
         "자축 저 오늘 생일 이에요."
 	));
-	
+
+	// 검색어 해당되는 문장 list
 	List<String> newList = new ArrayList<>();
-	
-	// 맛집 length=2
-	// 78 -> 7 + 2 add <b> , 7 add <b>
   
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -36,8 +34,8 @@ public class Test08 extends HttpServlet{
 		
 		String search = req.getParameter("search");
 		
-		int startIndex = 0;
-		int endIndex = 0;
+		int startIndex = 0;	// 검색할 search 단어 시작 index
+		int endIndex = 0;	// 검색할 search 단어 끝 index
 		
 		for(String sentence : list) {
 			if (sentence.contains(search)) {
@@ -59,7 +57,8 @@ public class Test08 extends HttpServlet{
 			out.println(sentence + "<hr>");
 		}
 		out.println("</body> </html>");
-		
+
+		// list 초기화
 		newList.clear();
 	}
 

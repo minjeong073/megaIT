@@ -24,7 +24,7 @@ public class Test05 extends HttpServlet{
         out.println("<html> <head> <title> 구구단 </title> </head>");
         out.println("<body> <ul>");
 
-        for (int i = 1; i < 9; i++) {
+        for (int i = 1; i <= 9; i++) {
             out.println("<li> " + dan + " X " + i + " = " + (dan * i) + "</li>");
         }
         out.println("</ul> </body> </html>");
