@@ -1,0 +1,210 @@
+
+Servlet
+
+eclipse
+- java ee 2022 03 zip (enterprise)
+
+tomcat
+- ver.9
+
+------------------------------------------
+
+eclipse - Window - Preference - Runtime Environments - add - Tomcat 9
+
+			      - encoding - utf8
+
+
+Servers - Tomcat v9
+
+Projecct Explorer - new - Dynamic Web Project - Generate web.xml deployment descriptor "check"
+
+------------------------------------------
+
+Java Package 이름 겹치지 않게 설정!
+- 도메인 기반으로 패키지 만들기
+
+------------------------------------------
+
+src > main > webapp > WEB-INF > web.xml
+
+<web-app>
+
+...
+
+<servlet>
+	<servlet-name>hello</servlet-name>
+	<servlet-class>com. ...</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>hello</servlet-name>
+	<url-pattern>/hello</url-pattern>
+</servlet-mapping>
+</web-app>
+
+------------------------------------------
+
+Server - Servlet 추가
+	- start (-> log 찍힘)
+
+web : localhost:8080/Servlet/hello
+
+------------------------------------------
+
+
+ip 231.130.12.1
+domain 
+	- DNS(Domain Name Server)
+	어떤 domain 의 ip 주소가 뭔지 저장되어있음
+	naver.com : 223.130.195.200
+
+localhost : 자신의 컴퓨ㅓ의 서버에 접속할 때 주소
+	: 127.0.0.1 or localhost
+
+port
+	webserver : 기본적으로 80 port 를 쓰게 되어있음
+	-> 도메인에 따로 적지 않아도 자동으로 포함되어서 전달
+	tomcat : 8080 port 사용
+	-> tomcat server 로 전달될 수 있도록 8080 적음
+
+------------------------------------------
+
+웹서버 역할
+- 네트워크를 통해서 브라우저와 통신
+- request 해석 -> 사용자 원하는 데이터 분석
+- 프로그램 구동 -> 
+- response 만들기, 전달
+
+
+브라우저 - request -> 
+			네트워크 처리
+-> response - 브라우저
+
+네트워크 처리 :
+request 해석 -> java program -> response 만들기
+
+------------------------------------------
+
+Apache Tomcat 역할
+- = servlet container
+- java 기반의 웹 서버 (Django python)
+- 클라이언트와 네트워크 통신
+- servlet 을 통해서 request, response 처리
+ 
+
+Servlet = dispatcher servlet(클라이언트로부터 받은 request 해석 -> Java 객체 형태로 생성, 객체 형태의 데이터로 response 만들어 클라이언트로 전달)
+	+ Java Program
+
+
+dispatcher servlet 이 보내고 받는 request, response
+: HttpServletRequest request, HttpServletResponse response
+
+
+Response 구성 : Header, Body(html ..)
+
+
+*** 
+결론 ) 
+request 객체, response 객체 받음 
+request 객체 정보를 통해 필요한 컨텐츠 생성(html) 
++ 필요에 따라 DB 조회해서 데이터 얻기 
+-> response 객체 채우기
+
+
+------------------------------------------
+
++ url mapping
+
+
+ex)
+http://marondal.com/lesson/example_list
+
+- http : schema (어떤 데이터를 전달할 것인지 명시)(protocol)
+https : security
+
+- marondal.com
+: host
+
+- /lesson/example_list
+: path
+
+path 와 java program 이 mapping 되어야 함
+
+
+-> public class Hello extends HttpServlet {
+	@override
+	public void doGet()
+		// do something
+}
+
+web.xml 을 통해 mapping
+
+ <servlet>
+  	<servlet-name>hello</servlet-name>
+  	<servlet-class>
+com.mingdong.servlet.test.HelloController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>hello</servlet-name>
+  	<url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+
+
+클래스를 hello 라는 이름으로 servlet 생성
+어떤 url 로 접근하려고 하는지 지정
+
+
+/hello -> 해당 web.xml 있는지 확인
+ -> 있으면 doGet 메서드 호출
+ -> 없으면 404 error
+
+
+
+------------------------------------------
+
+ex) http://
+?lectureId=10012&lectureListId=10130
+
+
+Method
+
+Request : method 호출 -> url
+parameter 전달 : url 안에 존재
+web server : return response
+
+
+- ?lectureId
+: 파라미터
+: 값을 전달하는 데에 사용
+lectureId = 10012, lectureListId = 10130
+두개의 값을 전달
+
+- /lesson/quiz_list
+: 메서드 이름
+
+**
+주소를 통해 메서드, 파라미터를 가져오는 방식 
+= Get Method
+
+(사용자가 전달하는 파라미터)
+해당하는 파라미터 값은 request 안에 들어있음
+-> String lectureId = request.getParameter("lectureId");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

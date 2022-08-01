@@ -1,0 +1,46 @@
+
+
+requeset
+->
+filter
+-> 
+servlet
+
+기본 filter 앞에 사용자 정의 filter 를 추가하여
+req, resp 에 utf-8를 직접 설정하지 않아도 됨
+
+public class EncodingFilter implements Filter {
+	
+	@Override
+	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) 
+	throws IOException, ServletException {
+		
+		req.setCharacterEncoding("utf-8");
+		resp.setCharacterEncoding("utf-8");
+		
+		chain.doFilter(req, resp);
+		
+	}
+	
+
+}
+
+
+chain.doFilter(req, resp);
+
+기존 filter 와의 관계 = chain
+
+ : 다음 filter 로 setting 환경 넘겨줌
+
+----------------------------------------
+
+
++ 필요한 페이지만 필터 설정
+@WebFilter("/servlet/*")
+
+@WebFilter("/*") : 모든 페이지
+
+
+지금은 (?) 브라우저가 요청할 수 없고 form 을 통해 요청 하고 받아야함
+
+
