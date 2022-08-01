@@ -1,0 +1,24 @@
+database 연동
+
+java class 
+- DBEx02InsertController
+	/db/ex02/insert
+	doPost
+	-> 전달받은 값으로 INSERT query 실행
+	sendRedirect("/db/ex02.jsp") 로 입력 결과 리스트 페이지로 이동
+
+- DBEx02DeleteController
+	/db/ex02/delete
+	doGet
+	-> 전달받은 id 로 DELETE query 실행
+	sendRedirect("/db/ex02.jsp") 로 삭제 결과 리스트 페이지로 이동
+
+jsp
+- ex02_input
+	post method 로 입력 받음
+
+- ex02.jsp
+	MysqlSerrvice -> ResultSet 으로 가져옴
+	입력 링크 : /db/ex02_input.jsp 
+	삭제 링크 : /db/ex02/delete?id=<%= resultSet.getInt("id") %>	
+
