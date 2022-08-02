@@ -1,0 +1,21 @@
+
+template 만드는 방식
+
+- 정적 방식 (static)
+	
+	date.jsp : <p> ... </p>
+
+	<%@ include file="date.jsp" %>
+
+- 동적 방식 (action tag)
+
+	date.jsp : <%= java.util.Calender. ... %>
+		
+	<jsp:include page="date.jsp" flush="true">
+
+
+
+
+header, nav, footer : 공통 요소
+-> 파일을 따로 나눠서 중복 제거
+-> 동적 방식으로 페이지에 추가
