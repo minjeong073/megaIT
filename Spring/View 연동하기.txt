@@ -1,0 +1,64 @@
+
+JSP View 연동
+
+@Controller
+public class HelloController {
+	@RequestMapping("/lesson01/ex02/1")
+	public String hello() {
+		return "lesson01/ex02";
+	}
+}
+
+
+
+url mapping 그대로
+return 내용 : "lesson01/ex02";
+
+webapp - WEB-INF : 외부에서 바로 접근 불가
+-> controller method 에서 해당 jsp 잡아주면
+이를 기반으로 jsp 찾아서 resp 에 담아 전송
+
+바로 전송하지 않고 controller 를 통해서 한단계 더 거쳐 전송
+
+------------------------------------
+
+application.properties 에 추가
+
+spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+
+resp body annotation 없으면 WEB-INF jsp 경로로 찾아감
+
+++ 이를 위한 라이브러리 추가
+JSP 연동 라이브러리
+
+- build.gradle 안에 dependencies 추가
+
+implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+implementation 'javax.servlet:jstl:1.2'
+
+** build.gradle 마우스 오른쪽 클릭 - gradle - refrash gradle project 
+해야 적용됨 ( 안하면 404 error )
+
+------------------------------------
+
+Gradle
+
+빌드 도구 (소스코드들을 정리해서 프로그램으로 만드는 과정)
+각종 라이브러리 간단하게 연결 포함해줌
+빌드 과정 라이브러리를 쉽게 세팅 가능
+
+requestMapping 으로 요청된 url path 탐색
+url mapping, controller, 등 모든 것
+Handler Mapping 
+
+-> Dispatcher Servlet controller 전송
+
+-> Controller 클라이언트 요청 처리
+
+
+respBody 아님
+-> View Resolver 에게 요청
+
+-> Dispatcher Servlet 에게 해당 view 전송
+
