@@ -1,0 +1,32 @@
+Spring MVC
+
+M : Model 데이터 .sql
+V : View 화면 .jsp
+C : Controller 로직 .java
+
+기존과 다르게 각각 서로 다른 파일에서 MVC 를 사용해
+파일 끼리 데이터 주고받을 수 있도록 변경해야함
+
+
+presentation layer (view - controller) 화면 
+business layer (- service -) 로직
+persistence layer (repository - database) 데이터
+
+화면 : 데이터 채워 넣는 과정 + 화면 구성하는 과정만 
+로직 : 중간 (연결) 과정
+데이터 : db에서 데이터 가져오는 과정만
+
+과정 사이에는 DTO, Entity 
+
+Entity : 값들을 모두 저장할 수 있도록 하는 객체?
+DTO : Entity 일 수도 있고
+	: 화면에 전달할 수 있는 정보 데이터 자체
+
+
+MVC에 따라서 
+controller : req, resp
+
+bo(business layer) package : 데이터 조회할 수 있는 layer
+dao package : interface 구성
+		: 이를 통해 쿼리 수행
+		-> 실제 쿼리 수행은 xml 로 
