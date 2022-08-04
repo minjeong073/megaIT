@@ -1,0 +1,65 @@
+
+MyBatis
+
+SELECT
+
+<select id="selectStoreList" resultType="com.ming.spring.test.database.model.Store"
+parameterType="int">
+		
+		SELECT
+			`id`
+			, `name`
+			, `phoneNumber`
+			, `address`
+			, `businessNumber`
+			, `introduce`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`store`
+		WHERE `id` = #{id}
+		
+	</select>
+
+#{id} 로 변수값 지정 - parameter 에 의해 전달됨
+
+-> 
+@Repository
+메서드의 parameter 에서 전달됨
+@Repository
+public interface ReviewDAO {
+
+	public Review selectReview(@Param("id") int id);
+
+id 를 @Param("id") 로 연결
+}
+
+parameterType="int" : java class 는 자동 인식
+
+
+
+
+@RequestParam("id") int id
+
+req 로부터 "id" 이름으로 전달된 param 이 id 에 저장
+
+@Param("id") int id
+
+전달 받은 id 를 xml 의 "id" 이름과 같은 #{id} 변수에 id 저장
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
