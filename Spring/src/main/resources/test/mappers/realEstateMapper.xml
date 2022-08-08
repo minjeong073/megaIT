@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- mybatis dtd -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.ming.spring.test.mybatis.dao.RealEstateDAO">
+ 
+ 	<!-- 1. id 로 select -->
+ 	<select id="selectRealEstate" parameterType="int" resultType="com.ming.spring.test.mybatis.model.RealEstate">
+ 	
+ 		SELECT
+ 			`id`
+ 			, `realtorId`
+ 			, `address`
+ 			, `area`
+ 			, `type`
+ 			, `price`
+ 			, `rentPrice`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`real_estate`
+ 		WHERE
+ 			`id` = #{id};	
+ 	
+ 	</select>
+ 	
+ 	<!-- 
+ 	
+ 	부등호 입력
+ 	
+ 	- 방법 1.
+ 		< : &lt;
+ 		> : &gt;
+ 	- 방법 2.
+ 		<![CDATA[ 부등호 ]]>
+ 		
+ 	 -->
+ 	
+ 	<!-- 2. 월세 조건 select -->
+ 	<select id="selectRealEstateAsRent" parameterType="int" resultType="com.ming.spring.test.mybatis.model.RealEstate">
+ 		
+ 		SELECT
+ 			`id`
+ 			, `realtorId`
+ 			, `address`
+ 			, `area`
+ 			, `type`
+ 			, `price`
+ 			, `rentPrice`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`real_estate`
+ 		WHERE
+ 			`rentPrice` &lt; #{rent};
+ 	</select>
+ 	
+ 	
+ 	<!-- 3. 복합 조건 select -->
+ 	<select id="selectMatchRealEstate" parameterType="int" resultType="com.ming.spring.test.mybatis.model.RealEstate">
+ 	
+ 		SELECT
+ 			`id`
+ 			, `realtorId`
+ 			, `address`
+ 			, `area`
+ 			, `type`
+ 			, `price`
+ 			, `rentPrice`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`real_estate`
+ 		WHERE
+ 			<![CDATA[
+ 			`type` = '매매' AND
+ 			`area` >= #{area} AND `price` <= #{price}
+ 			]]>
+ 			
+ 			<!-- `area` <![CDATA[ >= ]]> #{area} -->
+ 			
+ 		ORDER BY
+ 			`price` DESC;	
+ 		
+ 	</select>
+ 	
+ 	
+ 	<!-- insert -->
+ 	<!-- 1. 객체로 insert 하기 -->
+ 	<insert id="insertRealEstateByObject" parameterType="com.ming.spring.test.mybatis.model.RealEstate">
+ 		
+ 		INSERT INTO
+ 			`real_estate`
+ 		(
+ 			`realtorId`
+ 			, `address`
+ 			, `area`
+ 			, `type`
+ 			, `price`
+
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		)
+ 		VALUES
+ 		(
+ 			#{realtorId}
+ 			, #{address}
+ 			, #{area}
+ 			, #{type}
+ 			, #{price}
+
+ 			, now()
+ 			, now()
+ 		)
+ 	<!-- rentPrice 특징이 null 일 경우 
+ 	INSERT query 에 넣지 않아야 null 이 들어가게 됨 
+ 	아닐 경우 int 형이기 때문에 0 이 입력
+ 	-->
+ 	</insert>
+ 	
+ 	<!-- 2. field 로 insert 하기 -->
+ 	<insert id="insertRealEstate" parameterType="map">
+ 		
+ 		INSERT INTO
+ 			`real_estate`
+ 		(
+ 			`realtorId`
+ 			, `address`
+ 			, `area`
+ 			, `type`
+ 			, `price`
+ 			, `rentPrice`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		)
+ 		VALUES
+ 		(
+ 			#{realtorId}
+ 			, #{address}
+ 			, #{area}
+ 			, #{type}
+ 			, #{price}
+ 			, #{rentPrice}
+ 			, now()
+ 			, now()
+ 		)
+ 		
+ 	</insert>
+ 	
+ 	
+ </mapper>
