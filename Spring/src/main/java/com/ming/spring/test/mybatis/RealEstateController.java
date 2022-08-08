@@ -71,5 +71,25 @@ public class RealEstateController {
 		
 		return "입력 성공 : " + count;
 	}
+	
+	
+	// update
+	@RequestMapping("/update")
+	@ResponseBody
+	public String updateRealEstate() {
+		int count = realEstateBO.updateRealEstate(26, "전세", 70000);
+		
+		return "수정 성공 : " + count;
+	}
+	
+	
+	// delete
+	@RequestMapping("/delete")
+	@ResponseBody
+	public String deleteRealEstate(@RequestParam("id") int id) {
+		int count = realEstateBO.deleteRealEstate(id);
+		
+		return "삭제 성공 : " + count;
+	}
 
 }
